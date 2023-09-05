@@ -1,8 +1,7 @@
 import java.util.Scanner;
 
 public class Chaching {
-    
-    
+
     public static void gimmeDaMoney(String[] args) {
         boolean doesOwe;
         double temp;

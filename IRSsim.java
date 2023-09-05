@@ -12,10 +12,10 @@ public class IRSsim {
         int hours;
 
         System.out.println("Enter hours worked per week");
-        hours = cons.nextInt();
+        hours = cons.readInt();
 
-        System.out.println("Enter hourly salary")
-        hourly = cons.nextDouble();
+        System.out.println("Enter hourly salary");
+        hourly = cons.readDouble();
 
         gross = hours * hourly;
 

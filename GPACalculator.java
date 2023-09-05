@@ -9,27 +9,29 @@ public class GPACalculator {
         System.out.println("First we need a few details!");
         
         System.out.println("Enter Name: ");
-        String name = cons.nextLine();
+        String name = cons.readLine();
         
         System.out.println("Enter ID");
-        int id = cons.nextInt();
+        int id = cons.readInt();
         System.out.println(" ");
         
 
-        Student stud = Student(name, id);
+        Student stud = new Student(name, id);
+        
+        System.out.println("Initial GPA: " + stud.getGPA());
         
         System.out.println("Enter grade 1");
-        stud.addGrade(cons.nextInt());
+        stud.addGrade(cons.readInt());
         System.out.println(stud.getGPA());
         System.out.println(" ");
 
         System.out.println("Enter grade 2");
-        stud.addGrade(cons.nextInt());
+        stud.addGrade(cons.readInt());
         System.out.println(stud.getGPA());
         System.out.println(" ");
 
         System.out.println("Enter grade 3");
-        stud.addGrade(cons.nextInt());
+        stud.addGrade(cons.readInt());
         System.out.println(stud.getGPA());
         System.out.println(" ");
 
@@ -38,14 +40,13 @@ public class GPACalculator {
 }
 
 class Student {
-
     String name;
     int id;
     int pointSum, classCount;
-    double gpa = null;
+    double gpa;
 
     public Student() {
-        this("test", 123456)
+        this("test", 123456);
     }
     public Student(String name, int id) {
         this(name, id, 0, 0);

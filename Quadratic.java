@@ -7,7 +7,7 @@ public class Quadratic {
         ConsoleIO cons = new ConsoleIO();
         
 
-        System.out.println("Input a b and c, all one space apart. Put negative symbols directly next to the number.")
+        System.out.println("Input a b and c, all one space apart. Put negative symbols directly next to the number.");
         double a = cons.readDouble();
         double b = cons.readDouble();
         double c = cons.readDouble();

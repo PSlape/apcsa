@@ -20,6 +20,6 @@ public class vroom {
         total = c1 + c2 + c3 + inNumbers;
         letter = (char) ((total % 4) + 'A');
 
-        System.out.println(letter + total.toString());
+        System.out.println(letter + total);
     }
 }
