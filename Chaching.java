@@ -1,30 +1,35 @@
 import java.util.Scanner;
+import chn.util.ConsoleIO;
+import apcslib.Format;
 
 public class Chaching {
 
-    public static void gimmeDaMoney(String[] args) {
+    public static void gimmeDaMoney() {
         boolean doesOwe;
         double temp;
         int qrt, dm, nk, pn;
 
-        Scanner inp = new Scanner(System.in);
+        ConsoleIO inp = new ConsoleIO();
 
         System.out.print("Amount of Purchase: ");
-        double amnt = inp.nextDouble(); 
+        double amnt = inp.readDouble(); // Takes input for the price of the transaction
         System.out.println(" ");
 
         System.out.print("Amount paid: ");
-        double paid = inp.nextDouble();
+        double paid = inp.readDouble(); // Takes input for the amount of cash tendered
         System.out.println(" ");
 
         double change = paid - amnt;
+        
+        if(change > 1) {
+            change -= Math.floor(change);
+        }
         change *= 100;
         change += 0.01;
 
         int changeAsInt = (int) change;
 
         if(change < 0) {
-            change *= -1;
             doesOwe = true;
         } else {
             doesOwe = false;
@@ -32,23 +37,24 @@ public class Chaching {
 
 
         if(!doesOwe) {
-            qrt = (int) (change / 25);
-            temp = change % 25;
+            qrt = (int) (change / 25); // Gets the number of quarters
+            temp = change % 25; // Gets the leftover money for the next calculation
 
-            dm = (int) (temp / 10);
-            temp = temp % 10;
+            dm = (int) (temp / 10); // Gets the number of dimes
+            temp = temp % 10; // Gets the leftover money for the next calculation
 
-            nk = (int) (temp / 5);
-            temp = temp % 5;
+            nk = (int) (temp / 5); // Gets the number of nickels
+            temp = temp % 5; // Gets the leftover money for the next calculation
 
-            pn = (int) temp;
+            pn = (int) temp; // Leftover money is now pennies
             
+            System.out.println("Amount of coins needed: " + "\n");
             
-            System.out.println("Total Change: " + changeAsInt + " cents");
-            System.out.println("Quarters: " + qrt);
-            System.out.println("Dimes: " + dm);
-            System.out.println("Nickels: " + nk);
-            System.out.println("Pennies: " + pn);
+            System.out.println(Format.right(changeAsInt, 4) + " cents");
+            System.out.println(Format.right(qrt, 5) + " quarters");
+            System.out.println(Format.right(dm, 5) + " dimes");
+            System.out.println(Format.right(nk, 5) + " nickels");
+            System.out.println(Format.right(pn, 5) + " pennies");
         } else {
             System.out.println("You owe: " + changeAsInt + " cents");
         }
