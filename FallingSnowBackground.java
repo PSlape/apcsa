@@ -1,5 +1,3 @@
-
-
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.*;
@@ -23,13 +21,14 @@ public class FallingSnowBackground {
     private Timer snowTimer, lightTimer;
     private GradientPaint bg;
     
-    private int windSpeed, snowflakeCount, target;
+    private int windSpeed, snowflakeCount, target, dir;
     private Snowflake[] snowflakes;
 
     public FallingSnowBackground() {
         // Create the main frame
         frame = new JFrame("Popup Window with Falling Snow");
         target = 0;
+        dir = 1;
         // Set the size of the frame
         frame.setSize(WIDTH, HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -71,11 +70,14 @@ public class FallingSnowBackground {
             }
         });
         
-        lightTimer = new Timer(150, new ActionListener() {
+        lightTimer = new Timer(30, new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
-               target++;
-               bg = new GradientPaint(0f, 0f, new Color(0,0,50), (WIDTH/2), HEIGHT, new Color(10, 140, 250));
+               target += dir;
+               if(target > 254 || target < 1) {
+                   dir *= -1;
+               }
+               bg = new GradientPaint(0, 100f, new Color(0,0, target*5/6), WIDTH/2, HEIGHT, new Color(10, 10, target/2));
            }
         });
         
@@ -104,6 +106,7 @@ public class FallingSnowBackground {
 
         // Start the snowfall animation
         snowTimer.start();
+        lightTimer.start();
     }
 
     private void drawBackground(Graphics g) {

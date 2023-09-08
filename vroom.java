@@ -1,6 +1,15 @@
 import chn.util.ConsoleIO;
 import java.lang.Integer;
 
+/*
+ * Name: Peyton Slape
+ * Lab: L.A.4.2
+ * Date: 9/8/23
+ * Description: Provides a rental car code output depending on the license plate input.
+ * Purpose: Basic input and output
+ */
+
+
 public class vroom {
     public static void kachow() {
         
