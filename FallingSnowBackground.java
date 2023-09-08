@@ -2,6 +2,9 @@
 
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.event.*;
+import java.awt.geom.Point2D;
+import java.awt.Graphics2D;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -12,19 +15,21 @@ import javax.imageio.ImageIO;
 public class FallingSnowBackground {
     private static final int WIDTH = 2000;
     private static final int HEIGHT = 1000;
-    private static final int NUM_SNOWFLAKES = 2000;
 
     private JFrame frame;
+    private JSlider spdSlider, snowSlider;
     private JPanel panel;
     private BufferedImage image;
-    private Timer snowTimer;
-
+    private Timer snowTimer, lightTimer;
+    private GradientPaint bg;
+    
+    private int windSpeed, snowflakeCount, target;
     private Snowflake[] snowflakes;
 
     public FallingSnowBackground() {
         // Create the main frame
         frame = new JFrame("Popup Window with Falling Snow");
-
+        target = 0;
         // Set the size of the frame
         frame.setSize(WIDTH, HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,14 +46,19 @@ public class FallingSnowBackground {
         // Load and display your image
         image = loadImage("SmallHouse.png");
         JLabel imageLabel = new JLabel(new ImageIcon(image));
+        spdSlider = new JSlider(0, 10, 0);
+        snowSlider = new JSlider(1,4000, 2000);
+        panel.add(spdSlider);
+        panel.add(snowSlider);
         panel.add(imageLabel);
-
+        
         // Add the panel to the frame
         frame.add(panel);
 
         // Create snowflakes
-        snowflakes = new Snowflake[NUM_SNOWFLAKES];
-        for (int i = 0; i < NUM_SNOWFLAKES; i++) {
+        snowflakeCount = snowSlider.getValue();
+        snowflakes = new Snowflake[snowflakeCount];
+        for (int i = 0; i < snowflakeCount; i++) {
             snowflakes[i] = new Snowflake();
         }
 
@@ -60,7 +70,32 @@ public class FallingSnowBackground {
                 panel.repaint();
             }
         });
-
+        
+        lightTimer = new Timer(150, new ActionListener() {
+           @Override
+           public void actionPerformed(ActionEvent e) {
+               target++;
+               // bg = new GradientPaint(new Point2D.Double(0,0), new Color(0,0,50), new Color(10, 140, 250));
+           }
+        });
+        
+        spdSlider.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                windSpeed = spdSlider.getValue();
+            }
+        });
+        
+        snowSlider.addChangeListener(new ChangeListener() {
+           @Override
+           public void stateChanged(ChangeEvent e) {
+               snowflakeCount = snowSlider.getValue();
+               snowflakes = new Snowflake[snowflakeCount];
+               for(int i = 0; i < snowflakeCount; i++) {
+                   snowflakes[i] = new Snowflake();
+               }
+           }
+        });
         // Center the frame on the screen
         frame.setLocationRelativeTo(null);
 
@@ -73,23 +108,24 @@ public class FallingSnowBackground {
 
     private void drawBackground(Graphics g) {
         // Clear the panel
-        g.setColor(new Color(0, 0, 50));
-        g.fillRect(0, 0, WIDTH, HEIGHT);
+        Graphics2D g2D = (Graphics2D) g;
+        g2D.setPaint(bg);
+        g2D.fillRect(0, 0, WIDTH, HEIGHT);
 
         // Draw snowflakes
-        g.setColor(new Color(225,225,225));
+        g2D.setColor(new Color(225,225,225));
         for (Snowflake snowflake : snowflakes) {
-            g.fillRect(snowflake.getX(), snowflake.getY(), 3, 3);
+            g2D.fillRect(snowflake.getX(), snowflake.getY(), 3, 3);
         }
 
         // Draw snowy ground
-        g.setColor(new Color(225,225,225));
-        g.fillRect(0,5*HEIGHT/9, WIDTH, 2000);
+        g2D.setColor(new Color(225,225,225));
+        g2D.fillRect(0,5*HEIGHT/9, WIDTH, 2000);
     }
 
     private void moveSnowflakes() {
         for (Snowflake snowflake : snowflakes) {
-            snowflake.fall();
+            snowflake.fall(windSpeed);
         }
     }
 
@@ -121,11 +157,14 @@ class Snowflake {
     private int y;
     private final int MAX_Y = 2000;
     private final int MAX_X = 2000;
-    private final double WIND = 5;
     
     public Snowflake() {
         x = (int) (Math.random() * MAX_X);
         y = (int) (Math.random() * MAX_Y);
+    }
+    public Snowflake(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 
     public int getX() {
@@ -135,10 +174,12 @@ class Snowflake {
     public int getY() {
         return y;
     }
-
-    public void fall() {
+    public Pair getCoords() {
+        return new Pair(x, y);
+    }
+    public void fall(double wind) {
         y++;
-        x += WIND;
+        x += wind;
         if (y > MAX_Y) {
             y = 0;
             x = (int) (Math.random() * 2000);
@@ -147,6 +188,14 @@ class Snowflake {
             x = 0;
             y= (int) (Math.random() * 2000);
         }
+    }
+}
+
+class Pair {
+    int x, y;
+    public Pair(int x, int y) {
+        this.x = x;
+        this.y = y;
     }
 }
 
