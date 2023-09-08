@@ -46,7 +46,7 @@ public class FallingSnowBackground {
         // Load and display your image
         image = loadImage("SmallHouse.png");
         JLabel imageLabel = new JLabel(new ImageIcon(image));
-        spdSlider = new JSlider(0, 10, 0);
+        spdSlider = new JSlider(-10, 10, 0);
         snowSlider = new JSlider(1,4000, 2000);
         panel.add(spdSlider);
         panel.add(snowSlider);
@@ -75,7 +75,7 @@ public class FallingSnowBackground {
            @Override
            public void actionPerformed(ActionEvent e) {
                target++;
-               // bg = new GradientPaint(new Point2D.Double(0,0), new Color(0,0,50), new Color(10, 140, 250));
+               bg = new GradientPaint(0f, 0f, new Color(0,0,50), (WIDTH/2), HEIGHT, new Color(10, 140, 250));
            }
         });
         
@@ -125,7 +125,7 @@ public class FallingSnowBackground {
 
     private void moveSnowflakes() {
         for (Snowflake snowflake : snowflakes) {
-            snowflake.fall(windSpeed);
+            snowflake.fall(windSpeed, WIDTH);
         }
     }
 
@@ -166,7 +166,7 @@ class Snowflake {
         this.x = x;
         this.y = y;
     }
-
+    
     public int getX() {
         return x;
     }
@@ -177,16 +177,20 @@ class Snowflake {
     public Pair getCoords() {
         return new Pair(x, y);
     }
-    public void fall(double wind) {
+    public void fall(double wind, int width) {
         y++;
         x += wind;
         if (y > MAX_Y) {
             y = 0;
-            x = (int) (Math.random() * 2000);
+            x = (int) (Math.random() * MAX_X);
         }
         if(x > MAX_X) {
             x = 0;
-            y= (int) (Math.random() * 2000);
+            y = (int) (Math.random() * MAX_Y);
+        }
+        if(x < 0) {
+            x = MAX_X;
+            y = (int) (Math.random() * 2000);
         }
     }
 }
