@@ -9,6 +9,7 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
+import java.lang.Math;
 
 public class FallingSnowBackground {
     private static final int WIDTH = 2000;
@@ -21,7 +22,8 @@ public class FallingSnowBackground {
     private Timer snowTimer, lightTimer;
     private GradientPaint bg;
     
-    private int windSpeed, snowflakeCount, target, dir;
+    private int windSpeed, snowflakeCount, dir;
+    private double target;
     private Snowflake[] snowflakes;
 
     public FallingSnowBackground() {
@@ -73,11 +75,10 @@ public class FallingSnowBackground {
         lightTimer = new Timer(30, new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
-               target += dir;
-               if(target > 254 || target < 1) {
-                   dir *= -1;
-               }
-               bg = new GradientPaint(0, 100f, new Color(0,0, target*5/6), WIDTH/2, HEIGHT, new Color(10, 10, target/2));
+               target += 0.001;
+               Pair center = new Pair(WIDTH/2, HEIGHT);
+               Pair point = circlePair((double) target, 300.0, center);
+               bg = gradPair(center, new Color(0,0,60), point, new Color(102, 178, 255));
            }
         });
         
@@ -152,6 +153,23 @@ public class FallingSnowBackground {
             new FallingSnowBackground();
         });
     }
+    
+    private static Pair circlePair(double deg, double rad) {
+        return new Pair(rad*Math.sin(deg), rad*Math.cos(deg));
+    }
+    private static Pair circlePair(double deg, double rad, Pair offset) {
+        return new Pair(rad*Math.sin(deg) + offset.x, rad*Math.cos(deg) + offset.y);
+    }
+    
+    private static GradientPaint gradPair(Pair pair, Color col1, Pair pair2, Color col2) {
+        return new GradientPaint((float) pair.x, 
+            (float) pair.y, 
+            col1, 
+            (float) pair2.x, 
+            (float) pair2.y, 
+            col2
+        );
+    }
 }
 
 class Snowflake {
@@ -199,11 +217,20 @@ class Snowflake {
 }
 
 class Pair {
-    int x, y;
+    double x, y;
     public Pair(int x, int y) {
         this.x = x;
         this.y = y;
     }
+    public Pair(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+    public Pair(float x, float y) {
+        this.x = x;
+        this.y = y;
+    }
 }
+
 
 

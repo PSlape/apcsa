@@ -6,7 +6,7 @@ import java.lang.Integer;
  * Lab: L.A.4.2
  * Date: 9/8/23
  * Description: Provides a rental car code output depending on the license plate input.
- * Purpose: Basic input and output
+ * Purpose: Basic input and output using ConsoleIO
  */
 
 
@@ -21,7 +21,7 @@ public class vroom {
         ConsoleIO cons = new ConsoleIO();
 
         String inLetters, make, model;
-        int inNumbers, total;
+        int inNumbers, total; // Intializes variables
         char c1, c2, c3, letter;
         
         System.out.println("Enter Make: ");
@@ -35,12 +35,12 @@ public class vroom {
         inNumbers = cons.readInt();
 
         c1 = inLetters.charAt(0);
-        c2 = inLetters.charAt(1);
+        c2 = inLetters.charAt(1); // Gets the characters in the token.
         c3 = inLetters.charAt(2);
 
-        total = c1 + c2 + c3 + inNumbers;
-        letter = (char) ((total % 26) + 'A');
+        total = c1 + c2 + c3 + inNumbers; // calculates the numbers
+        letter = (char) ((total % 26) + 'A'); // Gets the letters using the formula
 
-        System.out.println(letter + Integer.toString(total));
+        System.out.println(letter + Integer.toString(total)); // Prints out the rental car tag.
     }
 }
