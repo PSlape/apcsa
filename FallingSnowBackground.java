@@ -34,7 +34,8 @@ public class FallingSnowBackground {
         // Set the size of the frame
         frame.setSize(WIDTH, HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
+        frame.setUndecorated(true);
+        
         // Create a panel to hold the content
         panel = new JPanel() {
             @Override

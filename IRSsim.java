@@ -1,4 +1,6 @@
 import chn.util.ConsoleIO;
+import apcslib.Format;
+import java.lang.Double;
 
 public class IRSsim {
 
@@ -8,7 +10,7 @@ public class IRSsim {
 
     public static void doMyTaxReturns() {
         ConsoleIO cons = new ConsoleIO();
-        double hourly, gross, net;
+        double hourly, gross, net, amnt;
         int hours;
 
         System.out.println("Enter hours worked per week");
@@ -23,14 +25,22 @@ public class IRSsim {
 
         net = gross;
         
-        net *= (1 - FEDTAX);
-        System.out.println("After Federal Income Tax: " + net);
-
+        
+        net *= 1 - FEDTAX;
+        amnt = gross * FEDTAX;
+        
+        System.out.println("Federal Income Tax: " + Format.right(amnt, 5, 2));
+        
         net *= 1 - FICA;
-        System.out.println("After FICA Tax: " + net);
+        amnt = gross * (FICA);
+        
+        System.out.println("FICA Tax: " + Format.right(amnt, 5, 2));
         
         net *= 1 - STATETAX;
-        System.out.println("Net Pay (After State Tax): " + net);
+        amnt = gross * STATETAX;
+        
+        System.out.println("State Tax: " + Format.right(amnt, 5, 2));
+        System.out.println("Net Pay: " + Format.right(net, 5, 2));
 
         
     }
