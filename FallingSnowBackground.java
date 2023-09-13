@@ -117,13 +117,13 @@ public class FallingSnowBackground {
         Graphics2D g2D = (Graphics2D) g;
         g2D.setPaint(bg);
         g2D.fillRect(0, 0, WIDTH, HEIGHT);
-
+        
         // Draw snowflakes
         g2D.setColor(new Color(225,225,225));
         for (Snowflake snowflake : snowflakes) {
             g2D.fillRect(snowflake.getX(), snowflake.getY(), 3, 3);
         }
-
+        
         // Draw snowy ground
         g2D.setColor(new Color(225,225,225));
         g2D.fillRect(0,5*HEIGHT/9, WIDTH, 2000);
@@ -164,7 +164,8 @@ public class FallingSnowBackground {
     }
     
     private static GradientPaint gradPair(Pair pair, Color col1, Pair pair2, Color col2) {
-        return new GradientPaint((float) pair.x, 
+        return new GradientPaint(
+            (float) pair.x, 
             (float) pair.y, 
             col1, 
             (float) pair2.x, 
