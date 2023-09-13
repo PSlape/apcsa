@@ -1,3 +1,5 @@
+package Lesson_7;
+
 // L.A.6.2 and L.A.7.3
 import java.lang.Double;
 

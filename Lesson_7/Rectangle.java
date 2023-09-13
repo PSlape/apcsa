@@ -1,3 +1,5 @@
+package Lesson_7;
+
 
 import apcslib.*;
 

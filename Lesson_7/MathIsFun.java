@@ -1,3 +1,5 @@
+package Lesson_7;
+
 import java.lang.Math;
 import apcslib.Format;
 import java.awt.geom.Point2D.Double;

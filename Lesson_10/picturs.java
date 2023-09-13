@@ -1,3 +1,5 @@
+package Lesson_10;
+
 import chn.util.ConsoleIO;
 
 public class picturs {

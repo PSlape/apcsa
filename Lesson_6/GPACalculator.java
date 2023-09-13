@@ -1,3 +1,5 @@
+package Lesson_6;
+
 import java.lang.Math;
 import chn.util.ConsoleIO;
 

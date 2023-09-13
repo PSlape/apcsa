@@ -1,3 +1,5 @@
+package Lesson_3;
+
 class easta {
 
     private static final int YEAR = 2023;

@@ -1,3 +1,5 @@
+package Lesson_5;
+
 import chn.util.ConsoleIO;
 import apcslib.Format;
 import java.lang.Double;

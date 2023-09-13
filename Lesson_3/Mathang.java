@@ -1,3 +1,5 @@
+package Lesson_3;
+
 import java.lang.*;
 
 public class Mathang {

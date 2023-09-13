@@ -30,7 +30,7 @@ public class FallingSnowBackground {
         // Create the main frame
         frame = new JFrame("Popup Window with Falling Snow");
         target = 0;
-        dir = 1;
+        
         // Set the size of the frame
         frame.setSize(WIDTH, HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,6 +50,7 @@ public class FallingSnowBackground {
         JLabel imageLabel = new JLabel(new ImageIcon(image));
         spdSlider = new JSlider(-10, 10, 0);
         snowSlider = new JSlider(1,4000, 2000);
+        
         panel.add(spdSlider);
         panel.add(snowSlider);
         panel.add(imageLabel);

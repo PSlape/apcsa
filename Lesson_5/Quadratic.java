@@ -1,3 +1,5 @@
+package Lesson_5;
+
 import chn.util.ConsoleIO;
 import java.lang.Math;
 import java.lang.Integer;
