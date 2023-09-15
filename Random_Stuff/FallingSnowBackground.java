@@ -1,3 +1,5 @@
+package Random_Stuff;
+
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.event.*;
@@ -14,7 +16,7 @@ import java.lang.Math;
 public class FallingSnowBackground {
     private static final int WIDTH = 1920;
     private static final int HEIGHT = 1080;
-
+    private static final double CHANGE_AMNT = 0.001;
     private JFrame frame;
     private JSlider spdSlider, snowSlider;
     private JPanel panel;
@@ -77,7 +79,7 @@ public class FallingSnowBackground {
         lightTimer = new Timer(30, new ActionListener() {
            @Override
            public void actionPerformed(ActionEvent e) {
-               target += 0.01;
+               target += CHANGE_AMNT;
                Pair center = new Pair(WIDTH/2, HEIGHT);
                Pair point = circlePair((double) target, 300.0, center);
                bg = gradPair(center, new Color(0,0,60), point, new Color(102, 178, 255));
