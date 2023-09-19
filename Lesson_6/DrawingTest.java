@@ -14,7 +14,7 @@ public class DrawingTest {
         Rectangle r7 = new Rectangle(-60,-60,60,60);
         Rectangle r8 = new Rectangle(0,-60,60,60);
         Rectangle r9 = new Rectangle(60,-60,60,60);
-        
+
         r1.draw();
         r2.draw();
         r3.draw();

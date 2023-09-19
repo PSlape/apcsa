@@ -4,7 +4,7 @@ package Lesson_9;
 import java.lang.Math;
 import apcslib.Format;
 
-public class lown {
+public class Lown {
     public static void main() {
         
     }
