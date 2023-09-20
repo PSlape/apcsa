@@ -22,28 +22,20 @@ public class IRSsim {
         hourly = cons.readDouble();
 
         gross = hours * hourly;
-
         System.out.println("Your gross salary is: " + gross);
 
         net = gross;
         
-        
-        net *= 1 - FEDTAX;
         amnt = gross * FEDTAX;
-        
         System.out.println("Federal Income Tax: " + Format.right(amnt, 5, 2));
         
-        net *= 1 - FICA;
         amnt = gross * (FICA);
-        
         System.out.println("FICA Tax: " + Format.right(amnt, 5, 2));
         
-        net *= 1 - STATETAX;
         amnt = gross * STATETAX;
-        
         System.out.println("State Tax: " + Format.right(amnt, 5, 2));
-        System.out.println("Net Pay: " + Format.right(net, 5, 2));
-
         
+        net *= 1 - STATETAX - FICA - STATETAX;
+        System.out.println("Net Pay: " + Format.right(net, 5, 2));
     }
 }
