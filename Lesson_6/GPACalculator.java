@@ -1,13 +1,13 @@
 package Lesson_6;
 
-import java.lang.Math;
 import chn.util.ConsoleIO;
+import apcslib.Format;
 
 public class GPACalculator {
-    public static void gpa() {
+    public static void main(String[] args) {
         ConsoleIO cons = new ConsoleIO();
 
-        System.out.println("Welcome to our GPA Calculator");
+        System.out.println("Welcome to my GPA Calculator");
         System.out.println("First we need a few details!");
         
         System.out.println("Enter Name: ");
@@ -17,35 +17,34 @@ public class GPACalculator {
         int id = cons.readInt();
         System.out.println(" ");
         
-
         Student stud = new Student(name, id);
         
-        System.out.println("Initial GPA: " + stud.getGPA());
+        System.out.println("Initial GPA: " + Format.right(stud.getGPA(), 5, 2));
         
-        System.out.println("Enter grade 1");
+        System.out.print("\nEnter grade 1: ");
         stud.addGrade(cons.readInt());
-        System.out.println(stud.getGPA());
+        System.out.println("GPA: " + Format.right(stud.getGPA(), 5, 2));
         System.out.println(" ");
 
-        System.out.println("Enter grade 2");
+        System.out.print("\nEnter grade 2: ");
         stud.addGrade(cons.readInt());
-        System.out.println(stud.getGPA());
+        System.out.println("GPA : " + Format.right(stud.getGPA(), 5, 2));
         System.out.println(" ");
 
-        System.out.println("Enter grade 3");
+        System.out.print("\nEnter grade 3: ");
         stud.addGrade(cons.readInt());
-        System.out.println(stud.getGPA());
+        System.out.println("GPA: " + Format.right(stud.getGPA(), 5, 2));
         System.out.println(" ");
 
-        System.out.println("Final GPA: " + stud.getGPA());
+        System.out.println("\nFinal GPA: " + Format.right(stud.getGPA(), 5, 2));
     }
 }
 
 class Student {
-    String name;
-    int id;
-    int pointSum, classCount;
-    double gpa;
+    private String name;
+    private int id;
+    private int pointSum, classCount;
+    private double gpa;
 
     public Student() {
         this("test", 123456);
@@ -60,15 +59,14 @@ class Student {
         this.classCount = classCount;
     }
     void addGrade(int grade) {
-        this.pointSum += grade;
-        this.classCount += 1;
-        this.gpa = pointSum / classCount;
-        System.out.println(this.gpa);
+        pointSum += grade;
+        classCount++;
+        gpa = pointSum / classCount;
     }
     double getGPA_raw() {
-        return this.gpa;
+        return gpa;
     }
     double getGPA() {
-        return (double) Math.round(this.gpa * 100) / 100;
+        return gpa;
     }
 }

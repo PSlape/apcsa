@@ -7,7 +7,6 @@ import java.awt.Color;
 public class BetterBug extends Bug {
     void turn(int deg) {
         int current = this.getDirection();
-        
         this.setDirection((current > 0) ? current + deg : current - deg); 
     }
     void turnLeft(int deg) {

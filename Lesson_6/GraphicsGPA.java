@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.lang.Integer;
 import java.util.ArrayList;
 
-public class GPACalcComp {
+public class GraphicsGPA {
     private static final int WIDTH = 500;
     private static final int HEIGHT = 500;
     
@@ -25,11 +25,11 @@ public class GPACalcComp {
     
     public static void main() {
         SwingUtilities.invokeLater(() -> {
-            new GPACalcComp();
+            new GraphicsGPA();
         });
     }
     
-    public GPACalcComp() {
+    public GraphicsGPA() {
         
         frame = new JFrame("GPA Calculator");
         tooltip = new JFrame("Error");

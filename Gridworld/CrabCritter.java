@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package Gridworld;
+=======
+package Gridworld;
+>>>>>>> 180e969e251da89f8b8c44d0a6af5c81bb7ffdf3
 
 /* 
  * AP(r) Computer Science GridWorld Case Study:

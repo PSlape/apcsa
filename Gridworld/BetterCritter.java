@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package gridworld;
+=======
+package Gridworld;
+>>>>>>> 180e969e251da89f8b8c44d0a6af5c81bb7ffdf3
 
 import info.gridworld.actor.Critter;
 import info.gridworld.grid.Location;

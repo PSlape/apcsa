@@ -19,8 +19,10 @@ public class ZBug extends BetterBug{
             move();
             steps++;
         } else if(steps >= length && loopCount < 3) {
-            steps = 0;
             loopCount++;
+            if(loopCount == 1) turn(135);
+            if(loopCount == 2) turn(-135);
+            steps = 0;
         } 
     }
 }
