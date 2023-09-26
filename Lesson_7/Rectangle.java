@@ -2,6 +2,7 @@ package Lesson_7;
 
 
 import apcslib.*;
+import java.awt.geom.Point2D;
 
 /**
  * Write a description of class Rectangle here.
@@ -74,6 +75,22 @@ public class Rectangle {
     }
     public void setDirection(double dir) {
         direction = dir;
+    }
+    public void setPosition(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+    public void setPosition(Point2D.Double point) {
+        this.x = point.x;
+        this.y = point.y;
+    }
+    public void setPos(double x, double y) {
+        this.x = x;
+        this.y = y;
+    }
+    public void setPos(Point2D.Double point) {
+        this.x = point.x;
+        this.y = point.y;
     }
     public double getX() {
         return x;

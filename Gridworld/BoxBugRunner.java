@@ -1,4 +1,4 @@
-package Gridworld;
+package gridworld;
 
 /* 
  * AP(r) Computer Science GridWorld Case Study:

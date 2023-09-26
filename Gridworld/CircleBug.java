@@ -1,4 +1,4 @@
-package Gridworld;
+package gridworld;
 import info.gridworld.actor.Bug;
 
 public class CircleBug extends BetterBug {
