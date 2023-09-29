@@ -1,0 +1,53 @@
+AP Computer Science: 
+Final Project – Java Program
+(4/16)
+
+I. Overall Guidelines
+
+For this project, you will be developing a Java program of your choice.  You are required to work in groups of 2-4 students.  Everyone in your group must be from your class period.  (I need to see you working in class on your project.  For the same reason, you need to use resources available on the school computers.  If the teacher approves a project requiring other resources, such as using a different programming language or an approved game engine, each person in your group will need to bring a laptop daily.)  Your group will also be doing a presentation at the end of the project.
+
+The project needs to be approved by the teacher.  Consideration will be given to the complexity of the project and to which students are in the group.  For example, a programming project may not be approved if it does not involve enough complexity, or if it is not big enough for the group size, or if it is too complex to be developed in the time frame you have or if it is not possible to develop with the programming knowledge you have.  It is important that the program can be completed and successfully executed by the end of the school year.
+
+II. Guidelines for Java Program
+
+Most students choose to develop a game.  
+
+Most games lend themselves to using a graphical interface rather than the text-based console window.  Lessons will be given in class on the basics of Java GUI software, and sample code will be provided.  It is recommended that one person in your group become the “GUI expert”.  Once the projects are submitted, the class will vote on which are the best games (in terms of criteria that include “how fun is it to play”, how well designed is the software, how robust and easy the user interface is to use, etc) and then the winners will be listed on the school website.
+
+Fairly early on in the project, you should decide on the Java classes needed, and then it would be a good idea if each person in the group is responsible for a specific (set of) classes, including the design and code development.
+
+Tips for developing a good-quality game program and well-designed user interface:
+•	Make sure the user interface is “robust” (doesn’t crash due to invalid input or unexpected actions).
+•	If you have a board or grid of some sort, label the rows and columns to make it easier to use.  In general, design the interface so that someone not in your group can understand how to use it without explanation from you.
+•	Testing, Testing and More Testing!!  Set aside lots of debug time.  And then have other people try out your game.  That’s the best way to find out what bugs you have.
+
+Lessons Learned: Here is some feedback from former students….
+•	Gaming software is very complex.  Start off with a basic game.  You can always add more complexity later.
+•	One month is NOT a lot of time to develop gaming software – start working on it as soon as possible.
+•	Planning your approach at the beginning of the project really does help.
+•	Figure out the most important classes to do first so that you end up with a working model of the game earlier on.
+•	Figure out the specific responsibilities each class has.  If classes have overlapping responsibilities, you will run into problems when integrating them together. 
+•	Integrate the classes early on in order to test that they work together properly.
+•	Don’t underestimate how long it takes to debug the project once you have done the code. Leave *at least* 3-5 days to do so; many projects need even more than that.
+•	It is very important to communicate and coordinate with your group members in order to get the code working.
+•	The GUI functionality is complex to learn and figure out how to do properly.  Have one student in the group be the “GUI expert”.  That person should explain the code to the other group members so they can understand it and/or be able to modify it as needed.
+More Feedback:
+•	Games often lend themselves to using the paint() method to paint images onto a Graphics object.
+•	Do not try to taking existing gaming code and try to modify it for your own game.  Most gaming software is more complex than you need.
+•	Projects that use a physics engine (such as “phys2d”) are very, very challenging and require much time just learning how the engine works and how to incorporate it into the project.  Such projects are only recommended for really strong programmers.  (Another engine called “jbox2d” has NO documentation, so it is preferable to use “phys2d”.)  Another challenge is creating a project JAR file that includes the engine (which initially comes in its own JAR file.)
+•	If using any code from GridWorld, it is better just to copy classes (such as Location, BoundedGrid without extending AbstractGrid, etc) and modify for your own use.  Don’t bother with using GridWorld JAR file or associated “package”.
+
+III. Grading/Presentation
+
+The project will receive a group grade.  It will be graded on:
+•	(30%) successful execution of the game
+•	(50%) the implementation of the software design principles that we have learned throughout the year, including object-oriented design; e.g. good choice of classes,  well-designed classes (private data and methods); code that is easy to understand; comments provided as needed to explain the code… If the teacher doesn’t understand it, that’s no good!!
+•	(10%) individual student effort and participation, including being on-task in class during project time and contributing a fair share to the project (based on teacher observation and feedback from team members)
+•	(10%) how straightforward the user interface is to use and how well-tested the program is
+
+The groups will submit their code and will do the following in the presentation:
+•	demonstrate their program to the class
+•	summarize the overall design of the program, including (Java) classes developed
+•	mention what was the most challenging or difficult aspect of developing the program
+•	make recommendations to next year’s students
+
