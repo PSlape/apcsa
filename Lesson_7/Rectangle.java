@@ -46,8 +46,8 @@ public class Rectangle {
     }
     public void draw() {
         dw.up(); // disables drawing mode
-        dw.move(x-width, y-height); // moves to the bottom left corner of the shape // gets the direction the drawing tool is facing
-        dw.setDirection(direction); // sets the direction to 90
+        dw.move(x, y); // moves to the bottom left corner of the shape
+        dw.setDirection(direction); // sets the direction to the direction variable
         dw.down();
         
         int sideCounter = 0;
@@ -57,7 +57,7 @@ public class Rectangle {
             } else {
                 dw.move(height);
             }
-            dw.turnRight(90);
+            dw.turnLeft(90);
             sideCounter++;
         }
     }

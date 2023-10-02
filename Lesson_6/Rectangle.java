@@ -11,9 +11,9 @@ import java.awt.geom.Point2D;
  * Lab: L.A.6.2
  */
 public class Rectangle {
-    private static DrawingTool dw = new DrawingTool(new SketchPad(500,500));
+    protected static DrawingTool dw = new DrawingTool(new SketchPad(500,500));
     
-    private double x, y, width, height, direction;
+    protected double x, y, width, height, direction;
     
     public Rectangle() {
      this(0,0,0,0);   
@@ -47,7 +47,7 @@ public class Rectangle {
     public void draw() {
         dw.up(); // disables drawing mode
         dw.move(x-width, y-height); // moves to the bottom left corner of the shape // gets the direction the drawing tool is facing
-        dw.setDirection(direction); // sets the direction to 90
+        dw.setDirection(direction); // sets the direction to the direction attribute
         dw.down();
         
         int sideCounter = 0;
