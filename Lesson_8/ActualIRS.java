@@ -16,8 +16,8 @@ public class ActualIRS {
         System.out.print("Enter taxable income: ");
         double income = cons.readDouble();
         
-        Taxpayer bob = new Taxpayer(status, income);
-        System.out.println("Your federal tax owed is: " + bob.calculateTax());
+        Taxpayer client = new Taxpayer(status, income);
+        System.out.println("Your federal tax owed is: " + client.calculateTax());
     }
     
 }
