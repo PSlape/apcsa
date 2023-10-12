@@ -4,10 +4,11 @@ import chn.util.ConsoleIO;
 import apcslib.Format;
 
 /**
- * Write a description of class Loan here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Name: Peyton Slape
+ * Date: 10/9/23
+ * Lab: 9.1
+ * Description: Gives you the amount you would pay each month for different interest rates
+ * Purpose: To use while loops
  */
 public class Loan {
     private static double prince, time, lowRate, highRate;

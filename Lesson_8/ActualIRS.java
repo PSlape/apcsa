@@ -59,13 +59,13 @@ class Taxpayer {
      */
     private static double marriedTax(double income){
         if(income >= Constants.TAX_E_MIN) {
-            return Constants.TAX_E_FLAT_M + (Constants.TAX_E_PER * income); // Bracket 5
+            return Constants.TAX_E_FLAT_M + (Constants.TAX_E_PER * (income - Constants.TAX_E_MIN)); // Bracket 5
         } else if(income >= Constants.TAX_D_MIN_M) {
-            return Constants.TAX_D_FLAT_M + (Constants.TAX_D_PER * income); // Bracket 4
+            return Constants.TAX_D_FLAT_M + (Constants.TAX_D_PER * (income - Constants.TAX_D_MIN_M)); // Bracket 4
         } else if(income >= Constants.TAX_C_MIN_M) {
-            return Constants.TAX_C_FLAT_M + (Constants.TAX_C_PER * income); // Bracket 3
+            return Constants.TAX_C_FLAT_M + (Constants.TAX_C_PER * (income - Constants.TAX_C_MIN_M)); // Bracket 3
         } else if(income >= Constants.TAX_B_MIN_M) {
-            return Constants.TAX_B_FLAT_M + (Constants.TAX_B_PER * income); // Bracket 2
+            return Constants.TAX_B_FLAT_M + (Constants.TAX_B_PER * (income - Constants.TAX_B_MIN_M)); // Bracket 2
         } else if(income >= 0) {
             return Constants.TAX_A * income; // Tax Bracket 1
         }
@@ -77,13 +77,13 @@ class Taxpayer {
      */
     private static double singleTax(double income) {
         if(income >= Constants.TAX_E_MIN) {
-            return Constants.TAX_E_FLAT_S + (Constants.TAX_E_PER * income); // Bracket 5
+            return Constants.TAX_E_FLAT_S + (Constants.TAX_E_PER * (income - Constants.TAX_E_MIN)); // Bracket 5
         } else if(income >= Constants.TAX_D_MIN_S) {
-            return Constants.TAX_D_FLAT_S + (Constants.TAX_D_PER * income); // Bracket 4
+            return Constants.TAX_D_FLAT_S + (Constants.TAX_D_PER * (income - Constants.TAX_D_MIN_S)); // Bracket 4
         } else if(income >= Constants.TAX_C_MIN_S) {
-            return Constants.TAX_C_FLAT_S + (Constants.TAX_C_PER * income); // Bracket 3
+            return Constants.TAX_C_FLAT_S + (Constants.TAX_C_PER * (income - Constants.TAX_C_MIN_S)); // Bracket 3
         } else if(income >= Constants.TAX_B_MIN_S) {
-            return Constants.TAX_B_FLAT_S + (Constants.TAX_B_PER * income); // Bracket 2
+            return Constants.TAX_B_FLAT_S + (Constants.TAX_B_PER * (income - Constants.TAX_B_MIN_S)); // Bracket 2
         } else if(income >= 0) {
             return Constants.TAX_A * income; // Tax Bracket 1
         }

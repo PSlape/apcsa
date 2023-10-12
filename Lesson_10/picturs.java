@@ -18,7 +18,14 @@ import CSAClasses.CustomFormat;
      *              print out * per value of lines
      *          print new line
 */
-    
+  
+/*
+ * Name: Peyton Slape
+ * Date: 10/8/23
+ * Lab: 10.1
+ * Description: Prints out different figures using nested for loops
+ * Purpose: Practice with nested for loops
+ */  
 public class picturs {
         // final values used for the printTable method
     private static final String SPACE = "     ";

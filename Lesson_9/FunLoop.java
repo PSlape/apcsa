@@ -5,7 +5,9 @@ import apcslib.Format;
 /**
  * Name: Peyton Slape
  * Lab: 9.2
- * Description: 
+ * Date: 10/9/23
+ * Description: Prints out different calculations using for loops
+ * Purpose: To use for loops
  */
 public class FunLoop {
     public static void main(String[] args) {
