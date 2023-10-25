@@ -1,9 +1,13 @@
 package Lesson_9;
-
 import chn.util.ConsoleIO;
 import apcslib.Format;
-
 /**
+ * Gives the amount paid each month for different interest rates
+ * 
+ * @author Peyton Slape
+ * @Version 9.1
+ */
+/*
  * Name: Peyton Slape
  * Date: 10/9/23
  * Lab: 9.1

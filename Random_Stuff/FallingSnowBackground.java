@@ -222,21 +222,5 @@ class Snowflake {
     }
 }
 
-class Pair {
-    double x, y;
-    public Pair(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-    public Pair(double x, double y) {
-        this.x = x;
-        this.y = y;
-    }
-    public Pair(float x, float y) {
-        this.x = x;
-        this.y = y;
-    }
-}
-
 
 
