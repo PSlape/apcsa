@@ -7,29 +7,124 @@ import java.io.IOException;
 
 
 /**
- * Write a description of class Console here.
+ * A console for input using BufferedReader and StringTokenizer
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Peyton Slape
+ * @version 11/08/23
  */
 
 public class Console {
-    private final BufferedReader bufferedInput;
-    private final StreamTokenizer tokenizer;
+    private final BufferedReader in;
+    private StringTokenizer tokenizer;
     
     public Console() {
-        bufferedInput = new BufferedReader(new InputStreamReader(System.in));
-        tokenizer = new StreamTokenizer(bufferedInput); 
+        in = new BufferedReader(new InputStreamReader(System.in));
     }
     
-    public double readDouble() {
-        double in = 0;
+    public String readLine() {
         try {
-            in = Double.parseDouble(tokenizer.toString());
-        } catch(NumberFormatException ex) {
-            System.out.println("Type entered was not of type double");
-            in = readDouble();
+            return in.readLine();
+        } catch(IOException io) {
+            io.printStackTrace();
+            System.exit(0);
+        } catch(Exception ex) {
+            System.out.println("An unexpected error occurred");
+            ex.printStackTrace();
+            System.exit(0);
         }
-        return in;
+        return "";
+    }
+    public String readToken() {
+        String read = "";
+        
+        try {
+            if(tokenizer == null || !tokenizer.hasMoreTokens()) {
+                while(!in.ready()) {}
+                String inLine = in.readLine();
+                tokenizer = new StringTokenizer(inLine);
+            } 
+            read = tokenizer.nextToken();
+        } catch(IOException io) {
+            System.out.println("An IO error occurred");
+            io.printStackTrace();
+            System.exit(0);
+        } catch(Exception ex) {
+            System.out.println("An unexpected error occurred");
+            ex.printStackTrace();
+            System.exit(0);
+        }
+        return read;
+    }
+    public int readInt() {
+        int read = 0;
+        
+        try {
+            if(tokenizer == null || !tokenizer.hasMoreTokens()) {
+                while(!in.ready()) {}
+                String inLine = in.readLine();
+                tokenizer = new StringTokenizer(inLine);
+            } 
+            read = Integer.parseInt(tokenizer.nextToken()); 
+        } catch(NumberFormatException ex) {
+            System.out.println("***\nInteger was not entered, try again.\n***");
+            return readInt();
+        } catch(IOException io) {
+            System.out.println("An IO error occurred");
+            io.printStackTrace();
+            System.exit(0);
+        } catch(Exception ex) {
+            System.out.println("An unexpected error occurred");
+            ex.printStackTrace();
+            System.exit(0);
+        }
+        return read;
+    }
+    public float readFloat() {
+        float read = 0;
+        
+        try {
+            if(tokenizer == null || !tokenizer.hasMoreTokens()) {
+                while(!in.ready()) {}
+                String inLine = in.readLine();
+                tokenizer = new StringTokenizer(inLine);
+            } 
+            read = Float.parseFloat(tokenizer.nextToken()); 
+        } catch(NumberFormatException ex) {
+            System.out.println("***\nFloat was not entered, try again.\n***");
+            return readFloat();
+        } catch(IOException io) {
+            System.out.println("An IO error occurred");
+            io.printStackTrace();
+            System.exit(0);
+        } catch(Exception ex) {
+            System.out.println("An unexpected error occurred");
+            ex.printStackTrace();
+            System.exit(0);
+        }
+        return read;
+    }
+    public double readDouble() {
+        double read = 0;
+        
+        try {
+            if(tokenizer == null || !tokenizer.hasMoreTokens()) {
+                while(!in.ready()) {}
+                String inLine = in.readLine();
+                tokenizer = new StringTokenizer(inLine);
+            } 
+            read = Double.parseDouble(tokenizer.nextToken()); 
+        } catch(NumberFormatException ex) {
+            System.out.println("***\nDouble was not entered, try again.\n***");
+            return readDouble();
+        } catch(IOException io) {
+            System.out.println("An IO error occurred");
+            io.printStackTrace();
+            System.exit(0);
+        } catch(Exception ex) {
+            System.out.println("An unexpected error occurred");
+            ex.printStackTrace();
+            System.exit(0);
+        }
+        return read;
     }
 }

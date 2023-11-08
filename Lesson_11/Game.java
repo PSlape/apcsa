@@ -1,8 +1,8 @@
 package Lesson_11;
 
 public class Game {
-    Player player1, player2;
-    int maxMoves;
+    final Player player1, player2;
+    final int maxMoves;
     
     public Game(int maxMoves) {
         this.maxMoves = maxMoves;
