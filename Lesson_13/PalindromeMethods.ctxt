@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=PalindromeMethods
+comment0.text=\r\n\ Provides\ static\ methods\ to\ see\ if\ a\ String\ is\ a\ palindrome\r\n\r\n\ @author\ Peyton\ Slape\r\n\ @version\ 08/31/23\r\n
+comment1.params=input
+comment1.target=boolean\ checkPalindrome(java.lang.String)
+comment1.text=\r\n\ Takes\ an\ input\ and\ checks\ if\ it\ is\ a\ palindrome\r\n\ \r\n\ @param\ input\ The\ String\ to\ check\r\n\ @return\ Whether\ or\ not\ the\ input\ String\ is\ a\ palindrome\r\n
+comment2.params=string
+comment2.target=java.lang.String\ reverse(java.lang.String)
+comment2.text=\r\n\ Reverses\ a\ String\r\n\ \r\n\ @param\ string\ The\ input\ String\ to\ reverse\r\n\ @return\ The\ reversed\ String\r\n
+comment3.params=input
+comment3.target=java.lang.String\ format_input(java.lang.String)
+comment3.text=\r\n\ Formats\ the\ input\ to\ prepare\ for\ use\r\n\ \r\n\ @param\ input\ The\ String\ to\ format\r\n\ @return\ The\ formatted\ String\r\n
+numComments=4

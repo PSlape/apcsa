@@ -35,20 +35,20 @@ public class PalindromeMethods {
      * @param string The input String to reverse
      * @return The reversed String
      */
-    private static String reverse(String string) {
+    public static String reverse(String string) {
         String outString = "";
         for(int i = string.length()-1; i >=0; i--) {
             outString += string.charAt(i);
         }
         return outString;
-    }
+    } 
     /**
      * Formats the input to prepare for use
      * 
      * @param input The String to format
      * @return The formatted String
      */
-    private static String format_input(String input) {
+    public static String format_input(String input) {
         String newString = "";
         for(int i = input.length()-1; i >= 0; i--) {
             if(Character.isLetterOrDigit(input.charAt(i))) newString += input.charAt(i);

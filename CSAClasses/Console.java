@@ -34,6 +34,7 @@ public class Console {
         }
         return "";
     }
+    
     public String readToken() {
         String read = "";
         
@@ -55,6 +56,7 @@ public class Console {
         }
         return read;
     }
+
     public int readInt() {
         int read = 0;
         

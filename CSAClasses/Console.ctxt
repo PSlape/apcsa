@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Console
+comment0.text=\r\n\ A\ console\ for\ input\ using\ BufferedReader\ and\ StringTokenizer\r\n\r\n\ @author\ Peyton\ Slape\r\n\ @version\ 11/08/23\r\n
+comment1.params=
+comment1.target=Console()
+comment2.params=
+comment2.target=java.lang.String\ readLine()
+comment3.params=
+comment3.target=java.lang.String\ readToken()
+comment4.params=
+comment4.target=int\ readInt()
+comment5.params=
+comment5.target=float\ readFloat()
+comment6.params=
+comment6.target=double\ readDouble()
+numComments=7
