@@ -11,9 +11,9 @@ import CSAClasses.CustomFormat;
 public class PicturesMethods
 {
         // final values used for the printTable method
-    private static final String SPACE = "     ";
-    private static final String LESS_SPACE = "    ";
-    private static final String LESSER_SPACE = "   ";
+    public static final String SPACE = "     ";
+    public static final String LESS_SPACE = "    ";
+    public static final String LESSER_SPACE = "   ";
     
     /**
      * Prints out a multiplication table
