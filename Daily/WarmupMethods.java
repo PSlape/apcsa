@@ -93,4 +93,12 @@ public class WarmupMethods {
         if(b == c) System.out.println("b = c"); else System.out.println("a != b");
         if(d == b) System.out.println("d = b"); else System.out.println("a != b");
     }
+    
+    public String reverseString(String str) {
+        String toReturn = "";
+        for(int i = str.length()-1; i > 0; i--) {
+            toReturn += str.charAt(i);
+        }
+        return toReturn;
+    }
 }

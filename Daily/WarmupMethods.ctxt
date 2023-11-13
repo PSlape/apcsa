@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=WarmupMethods
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ WarmupMethods\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=WarmupMethods()
+comment2.params=a\ b
+comment2.target=WarmupMethods(double,\ double)
+comment3.params=
+comment3.target=double\ product()
+comment4.params=
+comment4.target=double\ getA()
+comment5.params=
+comment5.target=double\ getB()
+comment6.params=rows\ cols
+comment6.target=void\ drawTable(int,\ int)
+comment7.params=lines
+comment7.target=void\ drawTree(int)
+comment8.params=
+comment8.target=void\ test()
+comment9.params=str
+comment9.target=java.lang.String\ reverseString(java.lang.String)
+numComments=10

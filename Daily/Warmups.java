@@ -14,6 +14,7 @@ public class Warmups {
     public static final int END = 0;
     public static final int MULT_TABLE = 1;
     public static final int STAR_PLOT = 2;
+    public static final int REVERSE_STR = 3;
     
     private static final ConsoleIO cons = new ConsoleIO();
     
@@ -22,7 +23,8 @@ public class Warmups {
             System.out.println(
                 "\n\nChoose a lab:\n\t" + 
                 MULT_TABLE + " - Multiplication Table" + "\n\t" +
-                STAR_PLOT + " - Star Tree" + "\n\n\t" +
+                STAR_PLOT + " - Star Tree" + "\n\t" +
+                REVERSE_STR + "- String Reverser" + "\n\n\t" +
                 END + " - End Program"
                 
             );
@@ -31,7 +33,7 @@ public class Warmups {
                 case END:
                     System.out.println("Ending program...");
                     try {
-                        TimeUnit.SECONDS.sleep(2);
+                        TimeUnit.SECONDS.sleep(1);
                         System.out.println("Ended");
                     } catch(Exception ex) {
                         System.out.println("\tError Ending Program");
@@ -44,6 +46,9 @@ public class Warmups {
                     break;
                 case STAR_PLOT:
                     runWarmup3();
+                    break;
+                case REVERSE_STR:
+                    runWarmup4();
                     break;
                 default:
                     System.out.println("Input error, try again");
@@ -75,5 +80,11 @@ public class Warmups {
     
     private static void runWarmup3() {
         WarmupMethods.drawTree(6);
+    }
+    
+    private static void runWarmup4() {
+        WarmupMethods wm = new WarmupMethods();
+        System.out.print("String to reverse: ");
+        System.out.println("Output: " + wm.reverseString(cons.readLine()));
     }
 }

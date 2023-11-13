@@ -4,8 +4,8 @@ package Lesson_13;
 /**
  * Write a description of class PiglatinatorMethods here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Peyton Slape
+ * @version 11/13/2023
  */
 public class PigLatinMethods {
     public enum PigLatinCase {
@@ -17,12 +17,12 @@ public class PigLatinMethods {
         PigLatinCase pigCase = getCase(englishWord);
         int vowelCount = 0;
         String start = "", end = "";
-        for(char ch : englishWord.toCharArray()) {
-            if(isVowel(ch)) {
-                vowelCount++;
-            }
+        switch(pigCase) {
+            case NORMAL:
+                return null;
+            default:
+                return null;
         }
-        return null;
     }
     private static PigLatinCase getCase(String englishWord) {
         int vowelCount = 0;
