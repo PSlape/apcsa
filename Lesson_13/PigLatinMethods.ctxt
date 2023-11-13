@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=PigLatinMethods
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ PiglatinatorMethods\ here.\r\n\r\n\ @author\ Peyton\ Slape\r\n\ @version\ 11/13/2023\r\n
+comment1.params=englishWord
+comment1.target=java.lang.String\ toPigLatin(java.lang.String)
+comment2.params=englishWord
+comment2.target=PigLatinMethods.PigLatinCase\ getCase(java.lang.String)
+comment3.params=ch
+comment3.target=boolean\ isVowel(char)
+numComments=4

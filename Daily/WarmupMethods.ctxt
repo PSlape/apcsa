@@ -17,4 +17,6 @@ comment7.params=lines
 comment7.target=void\ drawTree(int)
 comment8.params=
 comment8.target=void\ test()
-numComments=9
+comment9.params=str
+comment9.target=java.lang.String\ reverseString(java.lang.String)
+numComments=10
