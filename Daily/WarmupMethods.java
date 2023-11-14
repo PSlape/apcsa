@@ -101,4 +101,14 @@ public class WarmupMethods {
         }
         return toReturn;
     }
+    public String capitalizeString(String str) {
+        str = str.trim();
+        if(Character.isUpperCase(str.charAt(0))) {
+            return Character.toLowerCase(str.charAt(0)) + str.substring(1);
+        } else if(Character.isLowerCase(str.charAt(0))) {
+            return Character.toUpperCase(str.charAt(0)) + str.substring(1);
+        } else {
+            return str;
+        }
+    }
 }
