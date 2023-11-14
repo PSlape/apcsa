@@ -15,7 +15,8 @@ public class Warmups {
     public static final int MULT_TABLE = 1;
     public static final int STAR_PLOT = 2;
     public static final int REVERSE_STR = 3;
-    
+    public static final int UPPERCASE_STR = 4;
+
     private static final ConsoleIO cons = new ConsoleIO();
     
     public static void main(String[] args) {
@@ -50,13 +51,14 @@ public class Warmups {
                 case REVERSE_STR:
                     runWarmup4();
                     break;
+                case UPPERCASE_STR:
+                    runWarmup4();
+                    break;
                 default:
                     System.out.println("Input error, try again");
                     break;
             }
         }
-        
-        
     }
     
     private static void runWarmup1() {
@@ -86,5 +88,11 @@ public class Warmups {
         WarmupMethods wm = new WarmupMethods();
         System.out.print("String to reverse: ");
         System.out.println("Output: " + wm.reverseString(cons.readLine()));
+    }
+
+    private static void runWarmup5() {
+        WarmupMethods wm = new WarmupMethods();
+        System.out.print("String to capitalize: ");
+        System.out.println("Output: " + wm.capitalizeString(cons.readLine()));
     }
 }
