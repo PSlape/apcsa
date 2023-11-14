@@ -2,7 +2,7 @@ package Lesson_13;
 
 
 /**
- * Write a description of class PiglatinatorMethods here.
+ * Provides functionality to the Piglatinator
  *
  * @author Peyton Slape
  * @version 11/13/2023
@@ -26,11 +26,11 @@ public class PigLatinMethods {
         String start = "", end = "";
         switch(pigCase) {
             case NORMAL:
-                return translateNormal(normal);
+                return translateNormal(englishWord);
             case START_VOWEL:
-                return translateStartVowel(normal);
+                return translateStartVowel(englishWord);
             case NO_VOWELS:
-                return translateNoVowel(normal);
+                return translateNoVowel(englishWord);
             default:
                 return null;
         }
@@ -47,7 +47,7 @@ public class PigLatinMethods {
         for(char ch : englishWord.toCharArray()) {
             if(isVowel(ch)) {
                 vowelCount++;
-                if(englishWord.indexOf(ch) == 1) return PigLatinCase.START_VOWEL;
+                if(englishWord.indexOf(ch) == 0) return PigLatinCase.START_VOWEL;
             }
         }
         if(vowelCount > 0) {
