@@ -1,8 +1,8 @@
 package Lesson_7;
 
 public class RegularPolygon {
-    private int sideCount;
-    private double sideLength, rad, apo;
+    protected int sideCount;
+    protected double sideLength, rad, apo;
     
     public RegularPolygon() {
         this(3, 1);

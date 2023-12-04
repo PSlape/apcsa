@@ -129,6 +129,30 @@ public class Console {
         }
         return read;
     }
+    public double readByte() {
+        double read = 0;
+        
+        try {
+            if(tokenizer == null || !tokenizer.hasMoreTokens()) {
+                while(!in.ready()) {}
+                String inLine = in.readLine();
+                tokenizer = new StringTokenizer(inLine);
+            } 
+            read = Byte.parseByte(tokenizer.nextToken()); 
+        } catch(NumberFormatException ex) {
+            System.out.println("***\nByte was not entered, try again.\n***");
+            return readDouble();
+        } catch(IOException io) {
+            System.out.println("An IO error occurred");
+            io.printStackTrace();
+            System.exit(0);
+        } catch(Exception ex) {
+            System.out.println("An unexpected error occurred");
+            ex.printStackTrace();
+            System.exit(0);
+        }
+        return read;
+    }
     
     public String nextLine() {
         String read = "";

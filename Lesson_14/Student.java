@@ -18,6 +18,12 @@ public class Student extends Person {
         gpa = 0.0;
     }
     
+    public Student(String name, int age, String gender, String studentID, double gpa) {
+        super(name, age, gender);
+        this.studentID = studentID;
+        this.gpa = gpa;
+    }
+    
     @AvoidUse
     public void setGPA(double gpa) {
         this.gpa = gpa;
@@ -31,5 +37,18 @@ public class Student extends Person {
             gradeCount++;
         }
         gpa = total / gradeCount;
+    }
+    
+    @Override
+    public String toString() {
+        return name + ", " + age + ", " + gender + ", " + studentID;
+    }
+    
+    public double getGPA() {
+        return gpa;
+    }
+    
+    public String getStudentID() {
+        return studentID;
     }
 }
