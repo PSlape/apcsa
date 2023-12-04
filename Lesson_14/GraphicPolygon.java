@@ -42,7 +42,8 @@ public class GraphicPolygon extends RegularPolygon {
         dw.move(x, y + getApothem());
         dw.down();
         for(int i = 0; i < sideCount; i++) {
-            dw.turn(getVertexAngle());
+            System.out.println("Turning " + getVertexAngle() + " degrees");
+            dw.turnRight(180-getVertexAngle());
             dw.forward(sideLength);
         }
     }

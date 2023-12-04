@@ -18,7 +18,7 @@ public class RegularPolygon {
         apo = sideLength / (2 * Math.tan(Math.PI / this.sideCount));
     }
     public double getVertexAngle() {
-        return (sideCount - 2) / sideCount * 180; 
+        return ((double) (sideCount - 2) / (double) sideCount) * 180.0; 
     }
     public double getSideLength() {
         return sideLength;
