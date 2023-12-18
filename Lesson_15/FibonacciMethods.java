@@ -1,11 +1,12 @@
 package Lesson_15;
 import java.util.ArrayList;
 
-/**
- * Write a description of class Fibonacci here.
- *
- * @author (your name)
- * @version (a version number or a date)
+/*
+ * Name: Peyton Slape
+ * Date: 11/25/23
+ * Lab: 15.1
+ * Purpose: Recursion practice
+ * Description: Fibonacci Sequence
  */
 public class FibonacciMethods {
     public static int getNumber(int pos) {

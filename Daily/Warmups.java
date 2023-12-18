@@ -3,6 +3,8 @@ package Daily;
 import chn.util.ConsoleIO;
 import Lesson_10.PicturesMethods;
 import CSAClasses.CustomFormat;
+import java.util.StringTokenizer;
+import java.util.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -16,6 +18,7 @@ public class Warmups {
     public static final int STAR_PLOT = 2;
     public static final int REVERSE_STR = 3;
     public static final int UPPERCASE_STR = 4;
+    public static final int REC_STR = 5;
 
     private static final ConsoleIO cons = new ConsoleIO();
     
@@ -25,7 +28,8 @@ public class Warmups {
                 "\n\nChoose a lab:\n\t" + 
                 MULT_TABLE + " - Multiplication Table" + "\n\t" +
                 STAR_PLOT + " - Star Tree" + "\n\t" +
-                REVERSE_STR + "- String Reverser" + "\n\n\t" +
+                REVERSE_STR + "- String Reverser" + "\n\t" +
+                REC_STR + "- Recursive String Reverser" + "\n\n\t" + 
                 END + " - End Program"
                 
             );
@@ -53,6 +57,9 @@ public class Warmups {
                     break;
                 case UPPERCASE_STR:
                     runWarmup4();
+                    break;
+                case REC_STR:
+                    runWarmup6();
                     break;
                 default:
                     System.out.println("Input error, try again");
@@ -94,5 +101,15 @@ public class Warmups {
         WarmupMethods wm = new WarmupMethods();
         System.out.print("String to capitalize: ");
         System.out.println("Output: " + wm.capitalizeString(cons.readLine()));
+    }
+    
+    private static void runWarmup6() {
+        System.out.print("Enter a string: ");
+        System.out.println("Output: " + reverseWords(cons.readLine()));
+    }
+    private static String reverseWords(String msg) {
+        int index = msg.indexOf(" ");
+        if(index == -1 || index == 1) return "";
+        return reverseWords(msg.substring(index)) + " " + msg.substring(0, index);
     }
 }

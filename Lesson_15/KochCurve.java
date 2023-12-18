@@ -11,7 +11,7 @@ import apcslib.*;
 public class KochCurve extends DrawingTool {
     
     public KochCurve() {
-        super();
+        super(new SketchPad(1000, 1000));
     }
     
     public KochCurve(SketchPad sp) {
@@ -19,6 +19,24 @@ public class KochCurve extends DrawingTool {
     }
     
     public void drawKochCurve(int level, double length) {
+        if(level < 1) {
+            move(length);
+        } else {
+            drawKochCurve(level-1, length / 3);
+            turnLeft(60);
+            drawKochCurve(level-1, length / 3);
+            turnRight(120);
+            drawKochCurve(level-1, length / 3);
+            turnLeft(60);
+            drawKochCurve(level-1, length / 3);
+        }
+    }
+    
+    public void drawKochTriangle(int level, double length) {
+        for(int side = 0; side < 3; side++) {
+            drawKochCurve(level, length);
+            turnRight(120);
+        }
         
     }
 }

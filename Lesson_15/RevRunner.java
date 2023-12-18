@@ -2,11 +2,12 @@ package Lesson_15;
 
 import chn.util.ConsoleIO;
 
-/**
- * Write a description of class RevRunner here.
- *
- * @author (your name)
- * @version (a version number or a date)
+/*
+ * Name: Peyton Slape
+ * Date: 11/25/23
+ * Lab: 15.2
+ * Purpose: Recursion practice
+ * Description: Reverse String Recursively
  */
 public class RevRunner {
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class RevRunner {
             if(in.toLowerCase().charAt(0) == 'q') {
                 break;
             } else {
-                System.out.println(ReverseMethods.recursive(in) + "\n\n");
+                System.out.println("Output: " + ReverseMethods.recursive(in) + "\n\n");
             }
         }
     }
