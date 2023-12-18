@@ -9,7 +9,6 @@ import apcslib.*;
  * @version (a version number or a date)
  */
 public class KochCurve extends DrawingTool {
-    
     public KochCurve() {
         super(new SketchPad(1000, 1000));
     }
@@ -37,6 +36,5 @@ public class KochCurve extends DrawingTool {
             drawKochCurve(level, length);
             turnRight(120);
         }
-        
     }
 }

@@ -7,15 +7,17 @@ import java.io.OutputStream;
 
 /*
  * Name: Peyton Slape
+ * Lab: 16.1
  * Date: 12/18/23
- * Des
+ * Description: Reads a file then removes extra spaces
+ * Purpose: File input and output
  */
 
 /**
- * Write a description of class ReadData here.
+ * Removes extra spaces from Java source files
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Peyton Slape
+ * @version 12/18/23
  */
 public class ReadData {
     private static final String PATH = "H:\\apcsa-copy\\Lesson_16\\";
@@ -29,7 +31,7 @@ public class ReadData {
         String writeToFile = "";
         String out;
         while(inFile.hasMoreLines()) {
-            String next = inFile.readLine();
+            String next = inFile.readLine(); // Get line
             Integer store = null;
             
             for(int i = 0; i < next.length(); i++) {
@@ -39,12 +41,14 @@ public class ReadData {
                 }
             }
             if(store != null) {
-                out = Format.left(Integer.toString(store), 2) + next.substring(store, next.length());
+                out = Format.left(Integer.toString(store), 2) + next.trim();
                 
                 System.out.println(out);
-                outFile.println(out);
+                outFile.println(out); // Add to file
             }
         }
+        // Close in/out streams
+        inFile.close();
         outFile.close();
     }
 }
