@@ -19,6 +19,7 @@ public class Warmups {
     public static final int REVERSE_STR = 3;
     public static final int UPPERCASE_STR = 4;
     public static final int REC_STR = 5;
+    public static final int FLIP_HALVES = 6;
 
     private static final ConsoleIO cons = new ConsoleIO();
     
@@ -29,7 +30,8 @@ public class Warmups {
                 MULT_TABLE + " - Multiplication Table" + "\n\t" +
                 STAR_PLOT + " - Star Tree" + "\n\t" +
                 REVERSE_STR + "- String Reverser" + "\n\t" +
-                REC_STR + "- Recursive String Reverser" + "\n\n\t" + 
+                REC_STR + "- Recursive String Reverser" + "\n\t" + 
+                FLIP_HALVES + " - String Flipper" + "\n\n\t" +
                 END + " - End Program"
                 
             );
@@ -60,6 +62,9 @@ public class Warmups {
                     break;
                 case REC_STR:
                     runWarmup6();
+                    break;
+                case FLIP_HALVES:
+                    runWarmup7();
                     break;
                 default:
                     System.out.println("Input error, try again");
@@ -107,9 +112,19 @@ public class Warmups {
         System.out.print("Enter a string: ");
         System.out.println("Output: " + reverseWords(cons.readLine()));
     }
+    
     private static String reverseWords(String msg) {
         int index = msg.indexOf(" ");
         if(index == -1 || index == 1) return "";
         return reverseWords(msg.substring(index)) + " " + msg.substring(0, index);
+    }
+    
+    private static void runWarmup7() {
+        System.out.print("What is your string input?");
+        System.out.println("The string output is: " + flipString(cons.readLine()));
+    }
+    
+    private static String flipString(String str) {
+        return str.substring(str.length() / 2, str.length()) + str.substring(0, str.length() / 2);
     }
 }
