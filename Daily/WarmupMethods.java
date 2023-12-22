@@ -111,4 +111,18 @@ public class WarmupMethods {
             return str;
         }
     }
+    
+    public void printArray(int[] array) {
+        System.out.print("Numbers in array: ");
+        for(int ind = 0; ind < array.length; ind++) {
+            if((ind + 1) % 10 == 0 && ind != array.length - 1) {
+                System.out.print(array[ind] + "\nNumbers in array: ");
+            } else if(ind == array.length - 1) {
+                System.out.println(array[ind]);
+            } else {
+               System.out.print(array[ind] + ", ");
+            }
+        }
+        System.out.println("\nPrint array has finished.\n");
+    }
 }

@@ -12,6 +12,7 @@ public class Warmups {
     static final int geese = 5;
     static final int meese = 6;
     static final double neese = 3.885893489385893920020924;
+    private static final int[] intArray = {0, 6, 13, 0, 0, 76, 33, 0, 0, 0, 4, 29, 21, 0, 86, 0, 32, 66, 0, 0};
     
     public static final int END = 0;
     public static final int MULT_TABLE = 1;
@@ -20,6 +21,10 @@ public class Warmups {
     public static final int UPPERCASE_STR = 4;
     public static final int REC_STR = 5;
     public static final int FLIP_HALVES = 6;
+    public static final int STRING_THIRDS = 7;
+    public static final int PRINT_ARRAY = 8;
+    
+    
 
     private static final ConsoleIO cons = new ConsoleIO();
     
@@ -31,7 +36,9 @@ public class Warmups {
                 STAR_PLOT + " - Star Tree" + "\n\t" +
                 REVERSE_STR + "- String Reverser" + "\n\t" +
                 REC_STR + "- Recursive String Reverser" + "\n\t" + 
-                FLIP_HALVES + " - String Flipper" + "\n\n\t" +
+                FLIP_HALVES + " - String Flipper" + "\n\t" +
+                STRING_THIRDS + " - String Thirder" + "\n\t" +
+                PRINT_ARRAY + " - Print Array" + "\n\n\t" + 
                 END + " - End Program"
                 
             );
@@ -65,6 +72,12 @@ public class Warmups {
                     break;
                 case FLIP_HALVES:
                     runWarmup7();
+                    break;
+                case STRING_THIRDS:
+                    runWarmup8();
+                    break;
+                case PRINT_ARRAY:
+                    runWarmup9();
                     break;
                 default:
                     System.out.println("Input error, try again");
@@ -124,7 +137,26 @@ public class Warmups {
         System.out.println("The string output is: " + flipString(cons.readLine()));
     }
     
+    private static void runWarmup8() {
+        System.out.print("Enter a string: ");
+        String stronk = cons.readLine();
+        System.out.println("Third third: " + stringThirds(stronk, 3) + ", the first third: " + stringThirds(stronk, 1));
+    }
+    
+    private static void runWarmup9() {
+        WarmupMethods wm = new WarmupMethods();
+        wm.printArray(intArray);
+    }
+    
     private static String flipString(String str) {
         return str.substring(str.length() / 2, str.length()) + str.substring(0, str.length() / 2);
+    }
+    
+    private static String stringThirds(String str, int third) {
+        if(third > 3 || third < 1) return null;
+        int thirdLength = str.length() / 3;
+        if(third == 3) return str.substring((thirdLength + 1) * 2, str.length());
+        
+        return str.substring((thirdLength + 1) * (third - 1), (thirdLength) * third);
     }
 }
