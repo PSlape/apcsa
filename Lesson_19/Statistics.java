@@ -9,10 +9,10 @@ package Lesson_19;
  */
 public class Statistics
 {
-    private static final String PATH = "H:\\Chrome Downloads\\numbers.txt";
+    private static final String PATH = "C:\\Users\\Mudzg\\Downloads\\numbers.txt";
     
     public static void main() {
         MathFile file = new MathFile(PATH);
-        
+        ArrayTools.print(file.mode());
     }
 }

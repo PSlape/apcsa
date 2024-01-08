@@ -21,13 +21,13 @@ public class MathFile implements java.io.Closeable {
     private final FileInput inFile;
     private final FileOutput outFile;
     
-    private final DynamicArray<Integer> fileContents;
+    private final DynamicIntArray fileContents;
     
     public MathFile(String path) {
         inFile = new FileInput(path);
         outFile = new FileOutput(path, "append");
         
-        fileContents = new DynamicArray<Integer>();
+        fileContents = new DynamicIntArray();
         
         while(inFile.hasMoreLines()) {
             fileContents.append(inFile.readInt());
@@ -53,37 +53,48 @@ public class MathFile implements java.io.Closeable {
         return (double) total / (double) lines;
     }
     
-    public int[] mode() {
-        DynamicArray<Pair> shown = new DynamicArray<Pair>();
+    public Integer[] mode() {
+        Pair[] shown = new Pair[fileContents.size()];
+        int lastStoredIndex = 0;
         
-        for(int num : fileContents.toArray()) {
+        for(Integer num : fileContents.toArray()) {
             boolean didFind = false;
-            for(Pair pair : shown.toArray()) {
+            for(Pair pair : shown) {
+                if(pair == null) break;
+                
                 if(pair.x == num) {
                     didFind = true;
                     pair.add(new Pair(0, 1));
                 }
             }
             if(!didFind) {
-                shown.append(new Pair(num, 1));
+                shown[lastStoredIndex] = new Pair(num, 1);
+                lastStoredIndex++;
             }
         }
         
-        DynamicArray<Pair> modePairs = new DynamicArray<Pair>();
-        for(Pair pair : shown.toArray()) {
-            for(Pair mode : modePairs.toArray()) {
+        Pair[] modePairs = new Pair[shown.length];
+        for(Pair pair : shown) {
+            if(pair == null) continue;
+            for(Pair mode : modePairs) {
+                if(mode == null) {
+                    ArrayTools.append(modePairs, pair);
+                    continue;
+                }
                 if(pair.y > mode.y) {
-                    modePairs.remove(pair);
-                    modePairs.append(pair);
+                    ArrayTools.removeObject(modePairs, pair);
+                    ArrayTools.append(modePairs, pair);
                 } else if(pair.y == mode.y) {
-                    modePairs.append(pair);
+                    ArrayTools.append(modePairs, pair);
                 }
             }
         }
-        int[] modes = new int[modePairs.size()];
+        Integer[] modes = new Integer[modePairs.length];
         for(int i = 0; i < modes.length; i++) {
-            modes[i] = modePairs.get(i).x;
+            if(modePairs[i] == null) continue;
+            modes[i] = modePairs[i].x;
         }
+        ArrayTools.trim(modes);
         return modes;
     }
     

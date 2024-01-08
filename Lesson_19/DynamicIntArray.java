@@ -2,47 +2,47 @@ package Lesson_19;
 
 import java.lang.reflect.Array;
 /**
- * Write a description of class DynamicArray here.
+ * Write a description of class DynamicIntArray here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class DynamicArray<T> {
+public class DynamicIntArray {
     public static final int DEFAULT_CAPACITY = 10;
     
-    private transient T[] array;
+    private transient Integer[] array;
     private int furthestStoredIndex = 0;
     
     
     /**
-     * Initializes a new DynamicArray with the default length.
+     * Initializes a new DynamicIntArray with the default length.
      */
-    public DynamicArray() {
-        array = (T[]) new Object[DEFAULT_CAPACITY];
+    public DynamicIntArray() {
+        array = new Integer[DEFAULT_CAPACITY];
     }
     
     
     /**
-     * Initializes a new DynamicArray with a defined length.
+     * Initializes a new DynamicIntArray with a defined length.
      * 
-     * @param length The length the DynamicArray will be.
+     * @param length The length the DynamicIntArray will be.
      */
-    public DynamicArray(int length) {
+    public DynamicIntArray(int length) {
         if(length > 0) {
-            array = (T[]) new Object[length];
+            array = new Integer[length];
         } else {
-            array = (T[]) new Object[DEFAULT_CAPACITY];
+            array = new Integer[DEFAULT_CAPACITY];
         }
     }
     
     /**
-     * Increases the capacity of the DynamicArray, if the desired length is greater than the current length.
+     * Increases the capacity of the DynamicIntArray, if the desired length is greater than the current length.
      * 
      * @param length The desired minimum capacity
      */
     public void ensureCapacity(int length) {
         if(length > array.length) {
-            T[] tempArray = (T[]) new Object[length];
+            Integer[] tempArray = new Integer[length];
             for(int i = 0; i < array.length; i++) {
                 tempArray[i] = array[i];
             }
@@ -55,10 +55,10 @@ public class DynamicArray<T> {
      * 
      * @param element The object to be added
      */
-    public void append(T element) {
+    public void append(int element) {
         while(true) {
             try {
-                array[furthestStoredIndex] = (T) element;
+                array[furthestStoredIndex] = element;
                 furthestStoredIndex++;
                 break;
             } catch(ArrayIndexOutOfBoundsException ex) {
@@ -67,7 +67,7 @@ public class DynamicArray<T> {
         }
     }
     
-    public void append(DynamicArray<T> arr) {
+    public void append(DynamicIntArray arr) {
         for(int i = 0; i < arr.size(); i++) {
             if(arr.get(i) != null) {
                 append(arr.get(i));
@@ -75,8 +75,8 @@ public class DynamicArray<T> {
         }
     }
     
-    public void append(T[] arr) {
-        for(T element : arr) {
+    public void append(Integer[] arr) {
+        for(int element : arr) {
             append(element);
         }
     }
@@ -86,7 +86,7 @@ public class DynamicArray<T> {
      * 
      * @param element The object to be added
      */
-    public void add(T element) {
+    public void add(int element) {
         while(true) {
             try {
                 array[furthestStoredIndex] = element;
@@ -104,11 +104,11 @@ public class DynamicArray<T> {
      * @param element The object to be added
      * @param index The index to insert the object in.
      */
-    public void add(T element, int index) {
+    public void add(Integer element, int index) {
         while(true) {
             try {
                 if(index < furthestStoredIndex) {
-                    T temp = array[index];
+                    Integer temp = array[index];
                     array[index] = element;
                     furthestStoredIndex++;
                     break;
@@ -125,17 +125,17 @@ public class DynamicArray<T> {
      * @param index The index of the element to retrieve
      * @return The object at the index
      */
-    public T get(int index) {
+    public Integer get(int index) {
         return array[index];
     }
     
     /**
-     * Returns the DynamicArray as a primitive array.
+     * Returns the DynamicIntArray as a primitive array.
      * 
      * @return The locally stored array
      */
-    public T[] toArray() {
-        return (T[]) array;
+    public Integer[] toArray() {
+        return array;
     }
     
     /**
@@ -143,7 +143,8 @@ public class DynamicArray<T> {
      */
     public void clear() {
         furthestStoredIndex = 0;
-        array = (T[]) Array.newInstance(DynamicArray.class, array.length);
+        int length = array.length;
+        array = new Integer[length];
     }
     
     /**
@@ -152,8 +153,8 @@ public class DynamicArray<T> {
      * @param obj The object that could be in the array
      * @return Whether or not the object is in the array
      */
-    public boolean contains(T obj) {
-        for(T inArray : array) {
+    public boolean contains(Integer obj) {
+        for(Integer inArray : array) {
             if(obj == inArray) return true;
         }
         return false;
@@ -165,7 +166,7 @@ public class DynamicArray<T> {
      * @param obj The object to get the index of
      * @return The index of the object, or -1 if it is not in the array
      */
-    public int indexOf(T obj) {
+    public int indexOf(Integer obj) {
         for(int i = 0; i < array.length; i++) {
             if(obj == array[i]) return i;
         }
@@ -179,7 +180,7 @@ public class DynamicArray<T> {
      * @param obj The object to find
      * @return The index of the nth occurence, or -1 if it cannot be found
      */
-    public int nthIndexOf(int n, T obj) {
+    public int nthIndexOf(int n, Integer obj) {
         int occ = 1;
         for(int i = 0; i < array.length; i++) {
             if(obj == array[i]) {
@@ -210,7 +211,7 @@ public class DynamicArray<T> {
      * 
      * @param object The object to remove
      */
-    public void remove(T object) {
+    public void removeElement(Integer object) {
         int index = indexOf(object);
         removeIndex(index);
     }
@@ -222,7 +223,7 @@ public class DynamicArray<T> {
      */
     public void trim(int length) {
         if(length < array.length) {
-            T[] tempArray = (T[]) new Object[length];
+            Integer[] tempArray = new Integer[length];
             for(int i = 0; i < tempArray.length; i++) {
                 tempArray[i] = array[i];
             }
@@ -243,14 +244,14 @@ public class DynamicArray<T> {
     }
     
     public void swap(int index1, int index2) {
-        T temp = array[index1];
+        int temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
     }
     
     public String toString() {
         String outString = "[";
-        for(T element : array) {
+        for(int element : array) {
             outString += element + ", ";
         }
         return outString + "]";
@@ -258,31 +259,29 @@ public class DynamicArray<T> {
     
     public int size() {
         int elementCount = 0;
-        for(T element : array) {
+        for(Integer element : array) {
             if(element != null) elementCount++;
         }
         return elementCount;
     }
     
     public void sort() {
-        if(array[0] instanceof Integer) {
-            DynamicArray<Integer> sorted = new DynamicArray<Integer>(1);
-        
-            while(sorted.size() < size()) {
-                int lowest = Integer.MAX_VALUE;
-                int index = 0;
-                for(int i = 0; i < size(); i++) {
-                    if((int) get(i) < lowest) {
-                        lowest = (int) get(i);
-                        index = i;
-                    }
+        DynamicIntArray sorted = new DynamicIntArray(1);
+    
+        while(sorted.size() < size()) {
+            int lowest = Integer.MAX_VALUE;
+            int index = 0;
+            for(int i = 0; i < size(); i++) {
+                if((int) get(i) < lowest) {
+                    lowest = (int) get(i);
+                    index = i;
                 }
-                if(lowest == Integer.MAX_VALUE) continue;
-                removeIndex(index);
-                sorted.append(lowest);
             }
-            clear();
-            append((DynamicArray<T>) sorted);
+            if(lowest == Integer.MAX_VALUE) continue;
+            removeIndex(index);
+            sorted.append(lowest);
         }
+        clear();
+        append(sorted);
     }
 }

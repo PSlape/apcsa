@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=ArrayTools
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ArrayTools\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=array\ consumer
+comment1.target=void\ forEach(java.lang.Object[],\ java.util.function.Consumer)
+comment10.params=array
+comment10.target=void\ print(java.lang.Object[])
+comment2.params=array\ length
+comment2.target=void\ setLength(java.lang.Object[],\ int)
+comment3.params=array\ length
+comment3.target=void\ ensureCapacity(java.lang.Object[],\ int)
+comment4.params=array\ length
+comment4.target=void\ trim(java.lang.Object[],\ int)
+comment5.params=array
+comment5.target=void\ trim(java.lang.Object[])
+comment6.params=array\ index
+comment6.target=void\ remove(java.lang.Object[],\ int)
+comment7.params=array\ obj
+comment7.target=void\ removeObject(java.lang.Object[],\ java.lang.Object)
+comment8.params=array\ obj
+comment8.target=int\ indexOf(java.lang.Object[],\ java.lang.Object)
+comment9.params=array\ obj
+comment9.target=void\ append(java.lang.Object[],\ java.lang.Object)
+numComments=11
