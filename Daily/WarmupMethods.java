@@ -125,4 +125,24 @@ public class WarmupMethods {
         }
         System.out.println("\nPrint array has finished.\n");
     }
+    
+    public static void findLargest(int[] arr) {
+        int largest = 0;
+        for(int num : arr) {
+            if(num > largest) {
+                largest = num;
+            }
+        }
+        if(largest != 0) System.out.println("The largest number is: " + largest + "\n");
+    }
+    
+    public static void findSmallest(int[] arr) {
+        int smallest = Integer.MAX_VALUE;
+        for(int num : arr) {
+            if(num < smallest) {
+                smallest = num;
+            }
+        }
+        if(smallest != Integer.MAX_VALUE) System.out.println("The smallest number is: " + smallest + "\n");
+    }
 }

@@ -231,6 +231,13 @@ public class DynamicIntArray {
         }
     }
     
+    public void trim() {
+        int nullCount = 0;
+        for(int i = 0; i < array.length; i++) {
+            if(array[i] == null) removeIndex(i);
+        }
+    }
+    
     /**
      * Sets the length of the array, trims the array if the desired length is shorter, 
      * extends the array if the desired length is longer.

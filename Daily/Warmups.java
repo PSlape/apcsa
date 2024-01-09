@@ -23,6 +23,8 @@ public class Warmups {
     public static final int FLIP_HALVES = 6;
     public static final int STRING_THIRDS = 7;
     public static final int PRINT_ARRAY = 8;
+    public static final int LARGEST_NUM = 9;
+    public static final int SMALLEST_NUM = 10;
     
     
 
@@ -38,10 +40,14 @@ public class Warmups {
                 REC_STR + "- Recursive String Reverser" + "\n\t" + 
                 FLIP_HALVES + " - String Flipper" + "\n\t" +
                 STRING_THIRDS + " - String Thirder" + "\n\t" +
-                PRINT_ARRAY + " - Print Array" + "\n\n\t" + 
-                END + " - End Program"
+                PRINT_ARRAY + " - Print Array" + "\n\t" + 
+                LARGEST_NUM + " - Largest in Array" + "\n\t" +
+                SMALLEST_NUM+ "- Smallest in Array" + "\n\n\t" + 
+                END + " - End Program" + "\n\n"
                 
             );
+            
+            System.out.print("Pick A Lab - ");
             int labChoice = cons.readInt();
             switch(labChoice) {
                 case END:
@@ -78,6 +84,12 @@ public class Warmups {
                     break;
                 case PRINT_ARRAY:
                     runWarmup9();
+                    break;
+                case LARGEST_NUM:
+                    runWarmup10();
+                    break;
+                case SMALLEST_NUM:
+                    runWarmup11();
                     break;
                 default:
                     System.out.println("Input error, try again");
@@ -146,6 +158,14 @@ public class Warmups {
     private static void runWarmup9() {
         WarmupMethods wm = new WarmupMethods();
         wm.printArray(intArray);
+    }
+    
+    private static void runWarmup10() {
+        WarmupMethods.findLargest(intArray);
+    }
+    
+    private static void runWarmup11() {
+        WarmupMethods.findSmallest(intArray);
     }
     
     private static String flipString(String str) {

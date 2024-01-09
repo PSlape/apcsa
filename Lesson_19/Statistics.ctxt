@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Statistics
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Statistics\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Name\:\ Peyton\ Slape\r\n\ Lab\:\ 16.2\r\n\ Date\:\ 12/18/23\r\n\ Description\:\ Gets\ a\ bunch\ of\ things\ from\ a\ text\ file.\r\n\ Purpose\:\ File\ input\ and\ output,\ 1D\ Arrays\r\n
 comment1.params=
 comment1.target=void\ main()
 numComments=2

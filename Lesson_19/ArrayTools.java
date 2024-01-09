@@ -103,8 +103,6 @@ public final class ArrayTools
                 ensureCapacity(array, array.length + 1);
             } 
         }
-        
-        print(array);
     }
     
     public static void print(Object[] array) {

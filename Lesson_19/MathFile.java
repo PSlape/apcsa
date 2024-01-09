@@ -43,6 +43,13 @@ public class MathFile implements java.io.Closeable {
         outFile.println();
     }
     
+    public void printOut() {
+        System.out.println("Average: " + average());
+        System.out.println("Standard Deviation: " + stdev());
+        System.out.print("Mode(s): ");
+        ArrayTools.print(mode());
+    }
+    
     public double average() {
         long total = 0;
         int lines = 0;
@@ -53,49 +60,40 @@ public class MathFile implements java.io.Closeable {
         return (double) total / (double) lines;
     }
     
+    public double stdev() {
+        double total = 0;
+        for(int num : fileContents.toArray()) {
+            total += Math.pow(num - average(), 2);
+        }
+        return Math.sqrt(total / (fileContents.toArray().length - 1));
+    }
+    
     public Integer[] mode() {
-        Pair[] shown = new Pair[fileContents.size()];
-        int lastStoredIndex = 0;
+        Integer[] numSeen = new Integer[100];
         
-        for(Integer num : fileContents.toArray()) {
-            boolean didFind = false;
-            for(Pair pair : shown) {
-                if(pair == null) break;
-                
-                if(pair.x == num) {
-                    didFind = true;
-                    pair.add(new Pair(0, 1));
-                }
-            }
-            if(!didFind) {
-                shown[lastStoredIndex] = new Pair(num, 1);
-                lastStoredIndex++;
-            }
+        for(int num : fileContents.toArray()) {
+            if(numSeen[num-1] == null)
+                numSeen[num-1] = 0;
+
+            numSeen[num-1]++;
         }
         
-        Pair[] modePairs = new Pair[shown.length];
-        for(Pair pair : shown) {
-            if(pair == null) continue;
-            for(Pair mode : modePairs) {
-                if(mode == null) {
-                    ArrayTools.append(modePairs, pair);
-                    continue;
-                }
-                if(pair.y > mode.y) {
-                    ArrayTools.removeObject(modePairs, pair);
-                    ArrayTools.append(modePairs, pair);
-                } else if(pair.y == mode.y) {
-                    ArrayTools.append(modePairs, pair);
-                }
+        DynamicIntArray modes = new DynamicIntArray(1);
+        int modeTemp = 0;
+        
+        for(int num : numSeen) {
+            if(num > modeTemp) {
+                modeTemp = num;
             }
         }
-        Integer[] modes = new Integer[modePairs.length];
-        for(int i = 0; i < modes.length; i++) {
-            if(modePairs[i] == null) continue;
-            modes[i] = modePairs[i].x;
+        
+        for(int i = 0; i < numSeen.length; i++) {
+            if(numSeen[i] == modeTemp) {
+                modes.append(i + 1);
+            }
         }
-        ArrayTools.trim(modes);
-        return modes;
+        
+        return modes.toArray();
     }
     
     /**
