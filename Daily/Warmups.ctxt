@@ -10,4 +10,6 @@ comment4.params=
 comment4.target=void\ runWarmup3()
 comment5.params=
 comment5.target=void\ runWarmup4()
-numComments=6
+comment6.params=
+comment6.target=void\ runWarmup5()
+numComments=7

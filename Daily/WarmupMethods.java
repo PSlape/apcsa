@@ -101,4 +101,20 @@ public class WarmupMethods {
         }
         return toReturn;
     }
+    
+    public int findVowel(String str) {
+        for(char ch : str.toCharArray()) {
+            if(isVowel(ch)) return str.indexOf(ch);
+        }
+        return -1;
+    }
+    public boolean isVowel(char ch) {
+        ch = Character.toLowerCase(ch);
+        switch(ch) {
+            case 'a', 'e', 'i', 'o', 'u':
+                return true;
+            default:
+                return false;
+        }
+    }
 }

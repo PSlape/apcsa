@@ -15,6 +15,7 @@ public class Warmups {
     public static final int MULT_TABLE = 1;
     public static final int STAR_PLOT = 2;
     public static final int REVERSE_STR = 3;
+    public static final int FINDVOWEL = 4;
     
     private static final ConsoleIO cons = new ConsoleIO();
     
@@ -24,7 +25,8 @@ public class Warmups {
                 "\n\nChoose a lab:\n\t" + 
                 MULT_TABLE + " - Multiplication Table" + "\n\t" +
                 STAR_PLOT + " - Star Tree" + "\n\t" +
-                REVERSE_STR + "- String Reverser" + "\n\n\t" +
+                REVERSE_STR + "- String Reverser" + "\n\t" +
+                FINDVOWEL + "- String Reverser" + "\n\n\t" +
                 END + " - End Program"
                 
             );
@@ -37,7 +39,8 @@ public class Warmups {
                         System.out.println("Ended");
                     } catch(Exception ex) {
                         System.out.println("\tError Ending Program");
-                        System.out.println(ex);
+                        ex.printStackTrace();
+                        System.exit(0);
                     }
                     System.exit(0);
                     break;
@@ -50,13 +53,14 @@ public class Warmups {
                 case REVERSE_STR:
                     runWarmup4();
                     break;
+                case FINDVOWEL:
+                    runWarmup5();
+                    break;
                 default:
                     System.out.println("Input error, try again");
                     break;
             }
         }
-        
-        
     }
     
     private static void runWarmup1() {
@@ -86,5 +90,11 @@ public class Warmups {
         WarmupMethods wm = new WarmupMethods();
         System.out.print("String to reverse: ");
         System.out.println("Output: " + wm.reverseString(cons.readLine()));
+    }
+    
+    private static void runWarmup5() {
+        WarmupMethods wm = new WarmupMethods();
+        System.out.print("String to find vowel of: ");
+        System.out.println("Vowel position is: " + wm.findVowel(cons.readLine()));
     }
 }
