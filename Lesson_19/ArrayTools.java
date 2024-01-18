@@ -44,7 +44,7 @@ public final class ArrayTools
         }
     }
     
-    public static void trim(Object[] array) {
+    public static Object[] trim(Object[] array) {
         int length = 0;
         for(int i = 0; i < array.length; i++) {
             if(array[i] == null) {
@@ -57,15 +57,13 @@ public final class ArrayTools
         for(int i = 0; i < tempArray.length; i++) {
             tempArray[i] = array[i];
         }
-        array = tempArray;
+        return array = tempArray;
     }
     
     public static void remove(Object[] array, int index) {
-        array[index] = null;
         for(int i = index; i < array.length-1; i++) {
             array[i] = array[i+1];
         }
-        trim(array, array.length-1);
     }
     
     public static void removeObject(Object[] array, Object obj) {

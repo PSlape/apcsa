@@ -2,6 +2,7 @@ package Daily;
 
 import CSAClasses.CustomFormat;
 import Lesson_10.PicturesMethods;
+import java.util.ArrayList;
 
 /**
  * Write a description of class WarmupMethods here.
@@ -144,5 +145,13 @@ public class WarmupMethods {
             }
         }
         if(smallest != Integer.MAX_VALUE) System.out.println("The smallest number is: " + smallest + "\n");
+    }
+    
+    public static void clearZeroes(ArrayList<Integer> array) {
+        while(true) {
+            int ind = array.indexOf(0);
+            if(ind == -1) break;
+            array.remove(ind);
+        }
     }
 }

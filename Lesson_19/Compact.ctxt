@@ -5,4 +5,6 @@ comment1.params=path
 comment1.target=Compact(java.lang.String)
 comment2.params=
 comment2.target=void\ compact()
-numComments=3
+comment3.params=index
+comment3.target=void\ remove(int)
+numComments=4

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Permutations
+comment0.text=\r\n\ Name\:\ Peyton\ Slape\r\n\ Date\:\ 1/17/24\r\n\ Lab\:\ 20.2\r\n\ Purpose\:\ ArrayList\ manipulation\r\n\ Description\:\ Generates\ ArrayLists\ filled\ with\ random\ numbers,\ gives\ the\ sum\ of\ the\ ends.\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=list
+comment2.target=java.lang.String\ listToString(java.util.ArrayList)
+numComments=3

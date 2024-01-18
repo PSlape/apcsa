@@ -25,6 +25,7 @@ public class Warmups {
     public static final int PRINT_ARRAY = 8;
     public static final int LARGEST_NUM = 9;
     public static final int SMALLEST_NUM = 10;
+    public static final int CLEAR_ZERO = 11;
     
     
 
@@ -42,7 +43,8 @@ public class Warmups {
                 STRING_THIRDS + " - String Thirder" + "\n\t" +
                 PRINT_ARRAY + " - Print Array" + "\n\t" + 
                 LARGEST_NUM + " - Largest in Array" + "\n\t" +
-                SMALLEST_NUM+ "- Smallest in Array" + "\n\n\t" + 
+                SMALLEST_NUM + "- Smallest in Array" + "\n\t" + 
+                CLEAR_ZERO + "- Clear Zeroes" + "\n\n\t" +
                 END + " - End Program" + "\n\n"
                 
             );
@@ -90,6 +92,9 @@ public class Warmups {
                     break;
                 case SMALLEST_NUM:
                     runWarmup11();
+                    break;
+                case CLEAR_ZERO:
+                    runWarmup12();
                     break;
                 default:
                     System.out.println("Input error, try again");
@@ -168,6 +173,18 @@ public class Warmups {
         WarmupMethods.findSmallest(intArray);
     }
     
+    private static void runWarmup12() {
+        ArrayList<Integer> array = new ArrayList<Integer>();
+        for(int element : intArray) {
+            array.add(element);
+        }
+        System.out.println("Numbers: " + array);
+        
+        WarmupMethods.clearZeroes(array);
+        
+        System.out.println("Numbers: " + array + "\n\nThe array clearZeroes method is done");
+    }
+    
     private static String flipString(String str) {
         return str.substring(str.length() / 2, str.length()) + str.substring(0, str.length() / 2);
     }
@@ -179,4 +196,6 @@ public class Warmups {
         
         return str.substring((thirdLength + 1) * (third - 1), (thirdLength) * third);
     }
+    
+    
 }

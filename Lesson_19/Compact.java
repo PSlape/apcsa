@@ -10,24 +10,38 @@ package Lesson_19;
  */
 public class Compact {
     private final chn.util.FileInput fileIn;
-    private final DynamicIntArray fileContents = new DynamicIntArray();
+    private Integer[] fileContents = new Integer[100];
     
     public Compact(String path) {
         fileIn = new chn.util.FileInput(path);
         
         while(fileIn.hasMoreTokens()) {
-            fileContents.append(fileIn.readInt());
+            ArrayTools.append(fileContents, fileIn.readInt());
         }
-        
-        fileContents.trim();
     }
     
     public void compact() {
-        for(int i = 0; i < fileContents.size(); i++) {
-            if(fileContents.get(i) == 0) {
-                fileContents.removeIndex(i);
+        System.out.print("Original Array: ");
+        ArrayTools.print(fileContents);
+        
+        for(int i = 0; i < fileContents.length; i++) {
+            int zeros = 0;
+            while(
+                fileContents[i + zeros] != null && fileContents[i + zeros] == 0
+            ) {
+                remove(i + zeros);
+                if(fileContents[i+zeros] != null && fileContents[i + zeros] != 0) {
+                    zeros++;
+                }
             }
         }
-        ArrayTools.print(fileContents.toArray());
+        System.out.print("Compacted Array: ");
+        ArrayTools.print(fileContents);
+    }
+    
+    public void remove(int index) {
+        for(int i = index; i < fileContents.length-1; i++) {
+            fileContents[i] = fileContents[i+1];
+        }
     }
 }
