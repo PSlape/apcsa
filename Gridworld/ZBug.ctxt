@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=ZBug
+comment1.params=
+comment1.target=ZBug()
+comment2.params=len
+comment2.target=ZBug(int)
+comment3.params=
+comment3.target=void\ act()
+numComments=4

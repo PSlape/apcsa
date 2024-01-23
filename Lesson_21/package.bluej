@@ -1,5 +1,5 @@
 #BlueJ package file
-dependency1.from=LifeRunner
+dependency1.from=LifeContainer
 dependency1.to=Life
 dependency1.type=UsesDependency
 objectbench.height=78
@@ -22,16 +22,16 @@ readme.width=49
 readme.x=10
 readme.y=10
 target1.height=70
-target1.name=LifeRunner
+target1.name=Life
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=120
-target1.x=350
+target1.x=220
 target1.y=30
 target2.height=70
-target2.name=Life
+target2.name=LifeContainer
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=120
-target2.x=220
+target2.x=350
 target2.y=30

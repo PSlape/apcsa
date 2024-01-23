@@ -3,6 +3,7 @@ package Daily;
 import CSAClasses.CustomFormat;
 import Lesson_10.PicturesMethods;
 import java.util.ArrayList;
+import java.awt.Point;
 
 /**
  * Write a description of class WarmupMethods here.
@@ -153,5 +154,25 @@ public class WarmupMethods {
             if(ind == -1) break;
             array.remove(ind);
         }
+    }
+    
+    public static int checkNeighbors(int[][] array, int x, int y) {
+        Point[] transforms = {
+            new Point(  x-1,    y-1 ),
+            new Point(  x-1,    y   ),
+            new Point(  x-1,    y+1 ),
+            new Point(  x,      y+1 ),
+            new Point(  x+1,    y+1 ),
+            new Point(  x+1,    y   ),
+            new Point(  x+1,    y-1 ),
+            new Point(  x,      y-1 )
+        };
+        int count = 0;        
+        for(Point point : transforms) {
+            try {
+                if(array[point.x][point.y] == 1) count++;
+            } catch(ArrayIndexOutOfBoundsException indEx) {}
+        }
+        return count;
     }
 }

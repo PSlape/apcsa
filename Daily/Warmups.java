@@ -13,6 +13,12 @@ public class Warmups {
     static final int meese = 6;
     static final double neese = 3.885893489385893920020924;
     private static final int[] intArray = {0, 6, 13, 0, 0, 76, 33, 0, 0, 0, 4, 29, 21, 0, 86, 0, 32, 66, 0, 0};
+    private static final int[][] bioMatrix = {
+        {0, 0, 0, 0},
+        {1, 0, 1, 1},
+        {1, 1, 1, 1},
+        {0, 1, 1, 0}
+    };
     
     public static final int END = 0;
     public static final int MULT_TABLE = 1;
@@ -26,7 +32,7 @@ public class Warmups {
     public static final int LARGEST_NUM = 9;
     public static final int SMALLEST_NUM = 10;
     public static final int CLEAR_ZERO = 11;
-    
+    public static final int MATRIX_THING = 12;
     
 
     private static final ConsoleIO cons = new ConsoleIO();
@@ -44,7 +50,8 @@ public class Warmups {
                 PRINT_ARRAY + " - Print Array" + "\n\t" + 
                 LARGEST_NUM + " - Largest in Array" + "\n\t" +
                 SMALLEST_NUM + "- Smallest in Array" + "\n\t" + 
-                CLEAR_ZERO + "- Clear Zeroes" + "\n\n\t" +
+                CLEAR_ZERO + "- Clear Zeroes" + "\n\t" +
+                MATRIX_THING + " - Check for Neighbors" + "\n\n\t" +
                 END + " - End Program" + "\n\n"
                 
             );
@@ -95,6 +102,9 @@ public class Warmups {
                     break;
                 case CLEAR_ZERO:
                     runWarmup12();
+                    break;
+                case MATRIX_THING:
+                    runWarmup13();
                     break;
                 default:
                     System.out.println("Input error, try again");
@@ -183,6 +193,10 @@ public class Warmups {
         WarmupMethods.clearZeroes(array);
         
         System.out.println("Numbers: " + array + "\n\nThe array clearZeroes method is done");
+    }
+    
+    private static void runWarmup13() {
+        System.out.print("\nNumber of Neighbors in matrix = " + WarmupMethods.checkNeighbors(bioMatrix, 2, 2));
     }
     
     private static String flipString(String str) {

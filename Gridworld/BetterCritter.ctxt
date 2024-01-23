@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=BetterCritter
+comment1.params=locs
+comment1.target=info.gridworld.grid.Location\ selectMoveLocation(info.gridworld.grid.Location[])
+numComments=2

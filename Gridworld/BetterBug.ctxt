@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=BetterBug
+comment1.params=deg
+comment1.target=void\ turn(int)
+comment10.params=
+comment10.target=void\ setWest()
+comment11.params=deg
+comment11.target=boolean\ canMove(int)
+comment2.params=deg
+comment2.target=void\ turnLeft(int)
+comment3.params=deg
+comment3.target=void\ turnRight(int)
+comment4.params=
+comment4.target=void\ flip()
+comment5.params=r\ g\ b
+comment5.target=void\ setColor(int,\ int,\ int)
+comment6.params=x\ y
+comment6.target=void\ moveTo(int,\ int)
+comment7.params=
+comment7.target=void\ setNorth()
+comment8.params=
+comment8.target=void\ setSouth()
+comment9.params=
+comment9.target=void\ setEast()
+numComments=12
