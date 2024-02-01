@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=GridController
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ RemoteGrid\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ test()
+comment2.params=target\ actor\ newLocation
+comment2.target=void\ transpose(info.gridworld.actor.ActorWorld,\ info.gridworld.actor.Actor,\ info.gridworld.grid.Location)
+numComments=3

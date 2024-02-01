@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=CircleBug
+comment1.params=
+comment1.target=CircleBug()
+comment2.params=initialLength
+comment2.target=CircleBug(int)
+comment3.params=
+comment3.target=void\ act()
+numComments=4

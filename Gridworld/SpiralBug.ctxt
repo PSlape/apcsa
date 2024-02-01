@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=SpiralBug
+comment1.params=
+comment1.target=SpiralBug()
+comment2.params=initialLength
+comment2.target=SpiralBug(int)
+comment3.params=
+comment3.target=void\ act()
+numComments=4
