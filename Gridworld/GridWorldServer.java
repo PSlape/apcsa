@@ -12,14 +12,13 @@ import java.io.*;
  * @version (a version number or a date)
  */
 public class GridWorldServer {
-    public static final int PORT = 7778;
     
     private final ServerSocketFactory serverSocketFactory;
-    private final ArrayList<GridWorldProtocol.GridWorldConnection> serverSockets;
+    private final ArrayList<GridWorldProtocol.GridWorldConnection> connections;
     
     public GridWorldServer() throws IOException {
         serverSocketFactory = ServerSocketFactory.getDefault();
-        serverSockets = new ArrayList<GridWorldProtocol.GridWorldConnection>();
+        connections = new ArrayList<GridWorldProtocol.GridWorldConnection>();
     }
     
     

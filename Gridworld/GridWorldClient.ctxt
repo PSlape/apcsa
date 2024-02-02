@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=GridWorldClient
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ GridWorldClient\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=world
+comment1.target=GridWorldClient(info.gridworld.actor.ActorWorld)
+comment2.params=actors
+comment2.target=void\ add(info.gridworld.actor.Actor[])
+comment3.params=location
+comment3.target=java.util.Optional\ remove(info.gridworld.grid.Location)
+comment4.params=
+comment4.target=void\ periodic()
+numComments=5
