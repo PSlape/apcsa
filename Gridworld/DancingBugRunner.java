@@ -2,6 +2,7 @@ package Gridworld;
 
 import info.gridworld.actor.ActorWorld;
 import info.gridworld.grid.Location;
+import java.util.ArrayList;
 
 
 /**
@@ -14,7 +15,13 @@ public class DancingBugRunner {
     public static void main() {
         ActorWorld world = new ActorWorld();
         
-        world.add(new Location(4, 4), new DancingBug(5, 3, 2, 1));
+        ArrayList<Integer> array = new ArrayList<Integer>();
+        
+        for(int i = 0; i < 10; i++) {
+            array.add((int) (Math.random() * 9 + 1));
+        }
+        
+        world.add(new Location(4, 4), new DancingBug(array));
         world.show();
     }
 }

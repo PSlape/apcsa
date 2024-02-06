@@ -9,14 +9,8 @@ import info.gridworld.actor.Flower;
  * @version (a version number or a date)
  */
 public class JumperBug extends BetterBug {
-    
-    public JumperBug() {
-        super();
-    }
-    
     @Override
     public void act() {
-        
         if(canMove()) {
             move();
         } else {
