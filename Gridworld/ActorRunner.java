@@ -2,11 +2,12 @@ package Gridworld;
 
 import info.gridworld.actor.*;
 
-/**
- * Write a description of class ActorRunner here.
- *
- * @author (your name)
- * @version (a version number or a date)
+/*
+ * Name: Peyton Slape
+ * Date: 1/26/24
+ * Lab: Gridworld
+ * Description: The world of grids.
+ * Purpose: To practice using subclasses and premade libraries.
  */
 public class ActorRunner {
     public static void main() {

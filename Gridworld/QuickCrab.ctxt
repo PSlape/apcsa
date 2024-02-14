@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=QuickCrab
+comment0.text=\r\n\ Name\:\ Peyton\ Slape\r\n\ Date\:\ 2/7/24\r\n\ Lab\:\ Gridworld\r\n\ Description\:\ The\ world\ of\ grids.\r\n\ Purpose\:\ To\ practice\ using\ subclasses\ and\ premade\ libraries.\r\n
+comment1.params=
+comment1.target=QuickCrab()
+comment2.params=
+comment2.target=java.util.ArrayList\ getMoveLocations()
+comment3.params=loc
+comment3.target=boolean\ isEmpty(info.gridworld.grid.Location)
+numComments=4

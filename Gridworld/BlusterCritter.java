@@ -5,11 +5,12 @@ import java.util.ArrayList;
 
 import info.gridworld.grid.*;
 import info.gridworld.actor.*;
-/**
- * Write a description of class BlusterCritter here.
- *
- * @author (your name)
- * @version (a version number or a date)
+/*
+ * Name: Peyton Slape
+ * Date: 2/7/24
+ * Lab: Gridworld
+ * Description: The world of grids.
+ * Purpose: To practice using subclasses and premade libraries.
  */
 public class BlusterCritter extends Critter {
     int radius, courage;
@@ -36,8 +37,13 @@ public class BlusterCritter extends Critter {
     
     @Override
     public void processActors(ArrayList<Actor> actors) {
-        courage = (int) (((double) actors.size() / 25.0) * 100.0);
-        int scaled = (courage / 100) * 255;
+        courage = (int) (actors.size() / (2 * radius));
+        int scaled = courage * 255;
+        scaled = clamp(scaled, 0, 255);
         setColor(new Color(255, scaled, scaled));
+    }
+    
+    private int clamp(int num, int min, int max) {
+        return Math.max(min, Math.min(num, max));
     }
 }

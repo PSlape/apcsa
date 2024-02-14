@@ -33,6 +33,7 @@ public class Warmups {
     public static final int SMALLEST_NUM = 10;
     public static final int CLEAR_ZERO = 11;
     public static final int MATRIX_THING = 12;
+    public static final int GUESSING_GAME = 13;
     
 
     private static final ConsoleIO cons = new ConsoleIO();
@@ -51,9 +52,9 @@ public class Warmups {
                 LARGEST_NUM + " - Largest in Array" + "\n\t" +
                 SMALLEST_NUM + "- Smallest in Array" + "\n\t" + 
                 CLEAR_ZERO + "- Clear Zeroes" + "\n\t" +
-                MATRIX_THING + " - Check for Neighbors" + "\n\n\t" +
+                MATRIX_THING + " - Check for Neighbors" + "\n\t" +
+                GUESSING_GAME + " - Guessing Game" + "\n\n\t" + 
                 END + " - End Program" + "\n\n"
-                
             );
             
             System.out.print("Pick A Lab - ");
@@ -105,6 +106,9 @@ public class Warmups {
                     break;
                 case MATRIX_THING:
                     runWarmup13();
+                    break;
+                case GUESSING_GAME:
+                    runWarmup14();
                     break;
                 default:
                     System.out.println("Input error, try again");
@@ -197,6 +201,51 @@ public class Warmups {
     
     private static void runWarmup13() {
         System.out.print("\nNumber of Neighbors in matrix = " + WarmupMethods.checkNeighbors(bioMatrix, 2, 2));
+    }
+    
+    private static void runWarmup14() {
+        ConsoleIO cons = new ConsoleIO();
+        System.out.print("Give me a number from 1 to 1024: ");
+        int num = cons.readInt();
+        System.out.println("Enter correct, higher, or lower to help me find the number\n");
+        int lastGuess = 0;
+        int guess = (int) (Math.random() * 1023) + 1;
+        int max = 1024;
+        int min = 0;
+        int guessCount = 0;
+        while(true) {
+            System.out.print("Is " + guess + " correct? ");
+            guess = processInput(guess, min, max);
+            guessCount++;
+            if(guess < lastGuess) {
+                max = lastGuess;
+            } else if(guess > lastGuess) {
+                min = lastGuess;
+            }
+            if(guess == 0) {
+                System.out.println("\nYay we did it\n");
+                System.out.println("It took " + guessCount + " guesses.");
+                break;
+            }
+            lastGuess = guess;
+        }
+    }
+    
+    private static int processInput(int guess, int min, int max) {
+        String in = cons.readLine().trim().toLowerCase();
+        if(in.equals("correct") || in.equals("yes")) {
+            return 0;
+        } else if(in.equals("lower") || in.equals("high")) {
+            return (guess + min) / 2;
+        } else if(in.equals("higher") || in.equals("low")) {
+            return (guess + max) / 2;
+        } else if(in.equals("exit")) {
+            System.exit(0);
+            return Integer.MIN_VALUE;
+        } else {
+            System.out.println("Input error, try again");
+            return processInput(guess, min, max);
+        }
     }
     
     private static String flipString(String str) {

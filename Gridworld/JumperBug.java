@@ -9,6 +9,12 @@ import info.gridworld.actor.Flower;
  * @version (a version number or a date)
  */
 public class JumperBug extends BetterBug {
+    
+    public JumperBug() {
+        super();
+        setColor(java.awt.Color.yellow);
+    }
+    
     @Override
     public void act() {
         if(canMove()) {

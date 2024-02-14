@@ -4,11 +4,12 @@ import java.awt.Color;
 
 import info.gridworld.grid.Location;
 import info.gridworld.actor.*;
-/**
- * Write a description of class ChameleonKidRunner here.
- *
- * @author (your name)
- * @version (a version number or a date)
+/*
+ * Name: Peyton Slape
+ * Date: 2/7/24
+ * Lab: Gridworld
+ * Description: Creates a world for a critter to live in
+ * Purpose: To practice using subclasses and premade libraries.
  */
 public class ChameleonKidRunner
 {

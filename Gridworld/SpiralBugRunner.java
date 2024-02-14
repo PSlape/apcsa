@@ -18,7 +18,7 @@ package Gridworld;
  * @author Barbara Cloud Wells
  */
 
-import info.gridworld.actor.ActorWorld;
+import info.gridworld.actor.*;
 import info.gridworld.grid.Location;
 
 import java.awt.Color;
@@ -34,6 +34,9 @@ public class SpiralBugRunner
         ActorWorld world = new ActorWorld();
         world.add(new SpiralBug());
         world.add(new SpiralBug(3));
+        for(int i = 0; i < 4; i++) {
+            world.add(new Rock());
+        }
         world.show();
     }
 }

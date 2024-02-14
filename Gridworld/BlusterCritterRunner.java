@@ -6,23 +6,36 @@ import info.gridworld.grid.Location;
 
 import java.awt.Color;
 
-/**
- * Write a description of class BlusterCritterRunner here.
- *
- * @author (your name)
- * @version (a version number or a date)
+/*
+ * Name: Peyton Slape
+ * Date: 2/7/24
+ * Lab: Gridworld
+ * Description: Creates a world for a critter to live in
+ * Purpose: To practice using subclasses and premade libraries.
  */
 public class BlusterCritterRunner {
+    private static Color[] colors = {
+        Color.red,
+        Color.blue,
+        Color.green,
+        Color.magenta,
+        Color.cyan,
+        Color.black,
+        Color.white
+    };
+    
     public static void run() {
         ActorWorld world = new ActorWorld();
-        world.add(new Location(7, 8), new Rock());
-        world.add(new Location(3, 3), new Rock());
-        world.add(new Location(2, 8), new Rock(Color.BLUE));
-        world.add(new Location(5, 5), new Rock(Color.PINK));
-        world.add(new Location(1, 5), new Rock(Color.RED));
-        world.add(new Location(7, 2), new Rock(Color.YELLOW));
-        world.add(new Location(4, 4), new BlusterCritter(2));
+        for(int i = 0; i < 16; i++) {
+            world.add(new Rock(randomColor()));
+        }
+        world.add(new Location(4, 4), new BlusterCritter(3));
         world.add(new Location(5, 8), new BlusterCritter(2));
         world.show();
+    }
+    
+    
+    public static Color randomColor() {
+        return colors[(int) (Math.random() * (colors.length-1))];
     }
 }

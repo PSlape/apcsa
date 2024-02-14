@@ -18,7 +18,7 @@ package Gridworld;
  * @author Barbara Cloud Wells
  */
 
-import info.gridworld.actor.ActorWorld;
+import info.gridworld.actor.*;
 import info.gridworld.grid.Location;
 
 import java.awt.Color;
@@ -36,6 +36,9 @@ public class BoxBugRunner
         BoxBug bob = new BoxBug(3);
         world.add(new Location(7, 8), alice);
         world.add(new Location(5, 5), bob);
+        world.add(new Rock());
+        world.add(new Rock());
+        world.add(new Rock());
         world.show();
     }
 }

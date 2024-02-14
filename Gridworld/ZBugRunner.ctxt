@@ -1,5 +1,6 @@
 #BlueJ class context
 comment0.target=ZBugRunner
+comment0.text=\r\n\ Name\:\ Peyton\ Slape\r\n\ Date\:\ 1/26/24\r\n\ Lab\:\ Gridworld\r\n\ Description\:\ The\ world\ of\ grids.\r\n\ Purpose\:\ To\ practice\ using\ subclasses\ and\ premade\ libraries.\r\n
 comment1.params=args
 comment1.target=void\ main(java.lang.String[])
 numComments=2

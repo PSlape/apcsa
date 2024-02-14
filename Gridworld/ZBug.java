@@ -3,6 +3,13 @@ package Gridworld;
 import info.gridworld.actor.Bug;
 import info.gridworld.grid.Location;
 
+/*
+ * Name: Peyton Slape
+ * Date: 1/26/24
+ * Lab: Gridworld
+ * Description: The world of grids.
+ * Purpose: To practice using subclasses and premade libraries.
+ */
 public class ZBug extends BetterBug {
     private final int length;
     private int steps, stage;
@@ -15,7 +22,6 @@ public class ZBug extends BetterBug {
         
         steps = 0;
         stage = 1;
-        
         setDirection(90);
     }
     

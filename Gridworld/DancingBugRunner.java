@@ -5,11 +5,12 @@ import info.gridworld.grid.Location;
 import java.util.ArrayList;
 
 
-/**
- * Write a description of class DancingBugRunner here.
- *
- * @author (your name)
- * @version (a version number or a date)
+/*
+ * Name: Peyton Slape
+ * Date: 1/26/24
+ * Lab: Gridworld
+ * Description: The world of grids.
+ * Purpose: To practice using subclasses and premade libraries.
  */
 public class DancingBugRunner {
     public static void main() {

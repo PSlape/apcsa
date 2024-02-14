@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Cake
+comment0.text=\r\n\ A\ <code>Cake</code>\ sits\ around\ and\ waits\ for\ a\r\n\ <code>WorkerAnt</code>\ to\ get\ food\ from\ it.\r\n\ It\ does\ not\ act.\r\n
+comment1.params=
+comment1.target=Cake()
+comment1.text=\r\n\ Constructs\ a\ <code>Cake</code>\ actor.\ \ The\ Cake.gif\ is\r\n\ displayed\ for\ this\ actor\ without\ tinting.\r\n
+numComments=2

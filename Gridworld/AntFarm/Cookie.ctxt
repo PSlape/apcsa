@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Cookie
+comment0.text=\r\n\ A\ <code>Cookie</code>\ sits\ around\ and\ waits\ for\ a\r\n\ <code>WorkerAnt</code>\ to\ get\ food\ from\ it.\r\n\ It\ does\ not\ act.\r\n
+comment1.params=
+comment1.target=Cookie()
+comment1.text=\r\n\ Constructs\ a\ <code>Cookie</code>\ actor.\ \ The\ Cookie.gif\ is\r\n\ displayed\ for\ this\ actor\ without\ tinting.\r\n
+numComments=2

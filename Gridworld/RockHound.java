@@ -12,6 +12,12 @@ import java.util.ArrayList;
  * @version (a version number or a date)
  */
 public class RockHound extends Critter {
+    
+    public RockHound() {
+        super();
+        setColor(java.awt.Color.gray);
+    }
+    
     @Override
     public void processActors(ArrayList<Actor> actors) {
         for(Actor act : actors) {
@@ -20,4 +26,6 @@ public class RockHound extends Critter {
             }
         }
     }
+    
+    
 }

@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Processable
+comment0.text=\r\n\ Provides\ the\ process\ method\ that\ allows\ <code>WorkerAnt</code>\r\n\ actors\ to\ polymorphically\ get\ food\ from\ the\ <code>Food</code>\ objects\r\n\ (<code>Cake</code>\ and\ <code>Cookie</code>)\ and\ give\ food\ to\r\n\ <code>QueenAnt</code>\ objects.\ \ This\ method\ also\ enables\ the\r\n\ various\ actors\ to\ share\ their\ locations.\r\n
+comment1.params=ant
+comment1.target=void\ process(WorkerAnt)
+comment1.text=\r\n\ Called\ by\ <code>ant</code>\ to\ get/give\ food\ and\ to\r\n\ get/give\ food\ and\ queen\ locations.\r\n\ @param\ ant\ the\ calling\ <code>WorkerAnt</code>\r\n
+numComments=2
