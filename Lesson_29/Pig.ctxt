@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Pig
+comment0.text=\r\n\ Name\:\ Peyton\ Slape\r\n\ Lab\:\ 29.1\r\n\ Date\:\ 2/15/24\r\n\ Purpose\:\ Practice\ using\ interfaces\ and\ abstract\ methods\r\n\ Description\:\ A\ pig\r\n
+comment1.params=type\ sound
+comment1.target=Pig(java.lang.String,\ java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getSound()
+comment3.params=
+comment3.target=java.lang.String\ getType()
+numComments=4
