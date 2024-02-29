@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=WorldDominantMultiplierBug
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ WorldDominantMultiplierBug\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=color
+comment1.target=WorldDominantMultiplierBug(java.awt.Color)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=act\ oldLocation
+comment3.target=void\ startProcess(info.gridworld.actor.Actor,\ info.gridworld.grid.Location)
+comment4.params=act\ oldLocation
+comment4.target=void\ endProcess(info.gridworld.actor.Actor,\ info.gridworld.grid.Location)
+comment5.params=
+comment5.target=info.gridworld.grid.Location\ selectMoveLocation()
+numComments=6

@@ -1,9 +1,9 @@
 #BlueJ package file
-dependency1.from=ProcessedData
-dependency1.to=PlayerData
+dependency1.from=Warmups
+dependency1.to=WarmupMethods
 dependency1.type=UsesDependency
-dependency2.from=Warmups
-dependency2.to=WarmupMethods
+dependency2.from=ProcessedData
+dependency2.to=PlayerData
 dependency2.type=UsesDependency
 objectbench.height=78
 objectbench.width=934

@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=SortStep
+comment0.text=\r\n\ \ Driver\ program\ for\ the\ Sorts\ class.\r\n\r\n\ @author\ \ \ \ \ G.\ Peck\r\n\ @created\ \ \ \ July\ 18,\ 2002\r\n
+comment1.params=
+comment1.target=SortStep()
+comment1.text=\r\n\ \ Constructor\ for\ the\ SortStep\ object\r\n
+comment2.params=
+comment2.target=void\ sortMenu()
+comment2.text=\r\n\ \ Asks\ the\ user\ to\ select\ a\ sorting\ algorithm,\ fills\ the\ array\r\n\ \ with\ an\ amount\ of\ random\ integer\ data\ chosen\ by\ the\ user,\ calls\r\n\ \ the\ sorting\ algorithm,\ and\ gives\ an\ option\ of\ printing\ out\ the\r\n\ \ data\ after\ it\ has\ been\ sorted.\r\n
+comment3.params=numInts\ largestInt
+comment3.target=void\ fillArray(int,\ int)
+comment3.text=\r\n\ \ Initializes\ myArray\ with\ random\ integers\ in\ the\ range\r\n\ \ 1..largestInt\r\n\r\n\ @param\ \ numInts\ \ \ \ \ number\ of\ integers\ to\ generate\ (size\ of\r\n\ \ \ \ \ \ myArray)\r\n\ @param\ \ largestInt\ \ largest\ possible\ random\ integer\ to\ create\r\n
+comment4.params=
+comment4.target=void\ screenOutput()
+comment4.text=\r\n\ \ prints\ out\ the\ contents\ of\ the\ array\ in\ tabular\ form,\ 12\ columns\r\n
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+comment5.text=\r\n\ \ Provides\ a\ main\ method\ for\ access\ to\ the\ sorting\ menu\r\n\r\n\ @param\ \ args\ \ The\ command\ line\ arguments\ (not\ used)\r\n
+numComments=6

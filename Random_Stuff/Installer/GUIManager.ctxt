@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=GUIManager
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ GUIManager\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=GUIManager()
+comment2.params=e
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=boolean\ isReady()
+comment4.params=
+comment4.target=void\ getInput()
+comment5.params=
+comment5.target=void\ show()
+numComments=6
