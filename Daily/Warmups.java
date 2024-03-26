@@ -19,6 +19,8 @@ public class Warmups {
         {1, 1, 1, 1},
         {0, 1, 1, 0}
     };
+    private static final int[] mergeArray1 = {3, 6, 9, 12, 15, 18, 21};
+    private static final int[] mergeArray2 = {2, 4, 6, 8, 10, 12, 14};
     
     public static final int END = 0;
     public static final int MULT_TABLE = 1;
@@ -34,7 +36,7 @@ public class Warmups {
     public static final int CLEAR_ZERO = 11;
     public static final int MATRIX_THING = 12;
     public static final int GUESSING_GAME = 13;
-    
+    public static final int MERGE_ARRAY = 14;    
 
     private static final ConsoleIO cons = new ConsoleIO();
     
@@ -53,7 +55,8 @@ public class Warmups {
                 SMALLEST_NUM + "- Smallest in Array" + "\n\t" + 
                 CLEAR_ZERO + "- Clear Zeroes" + "\n\t" +
                 MATRIX_THING + " - Check for Neighbors" + "\n\t" +
-                GUESSING_GAME + " - Guessing Game" + "\n\n\t" + 
+                GUESSING_GAME + " - Guessing Game" + "\n\t" + 
+                MERGE_ARRAY + " - Merge Array" + "\n\n\t" +
                 END + " - End Program" + "\n\n"
             );
             
@@ -109,6 +112,9 @@ public class Warmups {
                     break;
                 case GUESSING_GAME:
                     runWarmup14();
+                    break;
+                case MERGE_ARRAY:
+                    runWarmup15();
                     break;
                 default:
                     System.out.println("Input error, try again");
@@ -231,6 +237,21 @@ public class Warmups {
         }
     }
     
+    private static void runWarmup15() {
+        WarmupMethods warm = new WarmupMethods();
+        
+        System.out.println("Array 1");
+        warm.printArray(mergeArray1);
+        
+        System.out.println("\nArray 2");
+        warm.printArray(mergeArray2);
+        
+        System.out.println("\nMerged Array");
+        warm.printArray(warm.mergeIt(mergeArray1, mergeArray2));
+        
+        System.out.println("\nThe merge two arrays method is done");
+    }
+    
     private static int processInput(int guess, int min, int max) {
         String in = cons.readLine().trim().toLowerCase();
         if(in.equals("correct") || in.equals("yes")) {
@@ -259,6 +280,5 @@ public class Warmups {
         
         return str.substring((thirdLength + 1) * (third - 1), (thirdLength) * third);
     }
-    
     
 }

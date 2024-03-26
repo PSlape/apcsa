@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=Graph
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=eq\ col
+comment2.target=void\ drawEquation(Equation,\ java.awt.Color)
+comment3.params=eq\ min\ max\ inc
+comment3.target=java.util.ArrayList\ getPoints(Equation,\ double,\ double,\ double)
+comment4.params=eq
+comment4.target=Equation\ approxDerivative(Equation)
+numComments=5

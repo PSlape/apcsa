@@ -2,12 +2,11 @@ package Random_Stuff.PhysicsTest;
 
 
 /**
- * Write a description of class Renderer here.
+ * Write a description of class Collider here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Renderer
-{
+public abstract class Collider {
     
 }

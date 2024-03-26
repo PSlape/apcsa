@@ -32,6 +32,31 @@ public class WarmupMethods {
         return b;
     }
     
+    public static int[] mergeIt(int[] array1, int[] array2) {
+        ArrayList<Integer> output = new ArrayList<Integer>(array1.length);
+        for(int i = 0; i < array1.length; i++) {
+            output.add(array1[i]);
+        }
+        
+        for(int i = 0; i < array2.length; i++) {
+            for(int j = 0; j < output.size(); j++) {
+                if(array2[i] < output.get(j)) {
+                    output.add(j, array2[i]);
+                    break;
+                }
+            }
+        }
+        return toIntArray(output);
+    }
+    
+    private static int[] toIntArray(ArrayList<Integer> array) {
+        int[] arr = new int[array.size()];
+        for(int i = 0; i < arr.length; i++) {
+            arr[i] = (int) array.get(i);
+        }
+        return arr;
+    }
+    
     public static void drawTable(int rows, int cols) {
         for(int i = 0; i < rows+1; i++) {
             System.out.print(CustomFormat.left(Integer.toString(i), 5));

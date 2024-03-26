@@ -36,7 +36,6 @@ public class QuickCrab extends CrabCritter {
         return locs;
     }
     
-    
     private boolean isEmpty(Location loc) {
         return getGrid().get(loc) == null || getGrid().get(loc) instanceof Flower;
     }

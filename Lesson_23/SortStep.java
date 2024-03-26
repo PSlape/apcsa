@@ -105,7 +105,7 @@ public class SortStep
   private void fillArray(int numInts, int largestInt)
   {
     myArray = new int[numInts];
-    Random randGen = new Random();
+    Random randGen = new Random(new Random(new Random().nextLong()).nextLong());
 
     for (int loop = 0; loop < myArray.length; loop++)
     {
