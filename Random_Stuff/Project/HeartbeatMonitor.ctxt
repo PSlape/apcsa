@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=HeartbeatMonitor
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ HeartbeatMonitor\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=in\ out
+comment1.target=HeartbeatMonitor(java.io.DataInputStream,\ java.io.DataOutputStream)
+comment2.params=
+comment2.target=void\ run()
+numComments=3

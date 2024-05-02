@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.target=ErrorCheck
+comment0.text=\ \r\n\ Name\:\ Peyton\ Slape\r\n\ Lab\:\ 17.1\r\n\ Date\:\ 4/30/24\r\n\ Description\:\ Banking\ system\ with\ errors.\r\n\ Purpose\:\ Learn\ how\ to\ use\ exceptions/try-catch\ statements.\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+numComments=2

@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Item
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Item\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=id\ inv
+comment1.target=Item(int,\ int)
+comment2.params=
+comment2.target=int\ getInv()
+comment3.params=
+comment3.target=int\ getId()
+comment4.params=
+comment4.target=int\ getID()
+comment5.params=other
+comment5.target=int\ compareTo(Item)
+comment6.params=other\ type
+comment6.target=int\ compareTo(Item,\ Item.CompareType)
+comment7.params=obj
+comment7.target=boolean\ equals(java.lang.Object)
+comment8.params=
+comment8.target=java.lang.String\ toString()
+numComments=9

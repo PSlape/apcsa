@@ -9,7 +9,7 @@ import java.util.Timer;
 
 public class ProjectServer {
     private ServerSocket server;
-    private Socket client;
+    private Socket player1, player2;
     private DataInputStream input;
     private DataOutputStream output;
     
@@ -19,63 +19,53 @@ public class ProjectServer {
     
     public ProjectServer() {
         setupSocket();
-        setupIO();
+        setupIO(player1);
+        setupIO(player2);
     }
     protected void setupSocket() {
         boolean connecting = true;
+        boolean connected = false;
         int attempts = 0;
         int port = ports[0];
         
         while(connecting) {
             try {
                 server = new ServerSocket(port, 10);
+                connecting = false;
+                connected = true;
             } catch(BindException bindEx) {
-                try {
-                    port = ports[findIndex(port) + 1];
-                } catch(IndexOutOfBoundsException ex) {
-                    connecting = false;
-                    port = ports[ports.length - 1];
-                }
                 
             } catch(IOException ex) {
                 System.out.println("Connection #" + (++attempts) + " failed. Trying again...");
                 System.out.println(ex);
             }
         }
-        if(!connecting) { 
+        if(!connecting && !connected) { 
             System.out.println("Connection timed out");
             System.exit(1);
         }
-    }
-    protected void setupIO() {
-        try {
-            input = new DataInputStream(client.getInputStream());
-            output = new DataOutputStream(client.getOutputStream());
-            
-            HeartbeatMonitor hbm = new HeartbeatMonitor(input, output);
-            hbm.start();
-        } catch(IOException ex) {
-            System.out.println("IO could not be established");
-            setupIO(1);
-        } catch(Exception ex) {
-            System.out.println("An unexpected error occured");
-            System.exit(1);
+        
+        try
+        {
+            player1 = server.accept();
+        }
+        catch (IOException ioe)
+        {
+            ioe.printStackTrace();
         }
     }
-    protected void setupIO(int counter) {
+    protected void setupIO(Socket client) {
         try {
             input = new DataInputStream(client.getInputStream());
             output = new DataOutputStream(client.getOutputStream());
             
-            HeartbeatMonitor hbm = new HeartbeatMonitor(input, output);
-            hbm.start();
-            
-        } catch(IOException ex) {
+            // HeartbeatMonitor hbm = new HeartbeatMonitor(input, output);
+            // hbm.start();
+        } catch(IOException io) {
             System.out.println("IO could not be established");
-            
-            if(counter < 3) setupIO(++counter);
         } catch(Exception ex) {
             System.out.println("An unexpected error occured");
+            ex.printStackTrace();
             System.exit(1);
         }
     }
@@ -84,6 +74,10 @@ public class ProjectServer {
             if(ports[i] == port) return i;
         }
         return -1;
+    }
+    
+    private void periodic() {
+        
     }
 }
 

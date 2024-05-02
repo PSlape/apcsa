@@ -1,8 +1,5 @@
 package Random_Stuff.Project;
 
-import java.awt.geom.Point2D;
-import java.util.ArrayList;
-
 /**
  * Write a description of class ProjectNetworkProtocol here.
  *

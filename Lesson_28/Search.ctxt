@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Search
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Search\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=args
+comment1.target=void\ main(java.lang.String[])
+comment2.params=store
+comment2.target=void\ testSearch(Lesson_27.Store)
+comment3.params=arr\ idToSearch
+comment3.target=int\ bsearch(Lesson_27.Item[],\ Lesson_27.Item)
+comment3.text=\r\n\ \ Searches\ the\ myStore\ array\ of\ Item\ Objects\ for\ the\ specified\r\n\ \ item\ object\ using\ a\ iterative\ binary\ search\ algorithm\r\n\r\n\ @param\ \ idToSearch\ \ Item\ object\ containing\ Id\ value\ being\ search\ for\r\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ \ index\ of\ Item\ if\ found,\ -1\ if\ not\ found\r\n
+comment4.params=arr\ idToSearch\ first\ last
+comment4.target=int\ bsearch(Lesson_27.Item[],\ Lesson_27.Item,\ int,\ int)
+comment4.text=\r\n\ \ Searches\ the\ specified\ array\ of\ Item\ Objects\ for\ the\ specified\r\n\ \ item\ object\ using\ a\ recursive\ binary\ search\ algorithm\r\n\r\n\ @param\ \ idToSearch\ \ Item\ object\ containing\ Id\ value\ being\ search\ for\r\n\ @param\ \ first\ \ \ \ \ \ \ Starting\ index\ of\ search\ range\r\n\ @param\ \ last\ \ \ \ \ \ \ \ Ending\ index\ of\ search\ range\r\n\ @return\ \ \ \ \ \ \ \ \ \ \ \ \ index\ of\ Item\ if\ found,\ -1\ if\ not\ found\r\n
+numComments=5

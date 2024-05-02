@@ -1,9 +1,9 @@
 #BlueJ package file
-dependency1.from=FallingSnowBackground
-dependency1.to=Pair
+dependency1.from=KnockKnockServer
+dependency1.to=KnockKnockProtocol
 dependency1.type=UsesDependency
-dependency2.from=KnockKnockServer
-dependency2.to=KnockKnockProtocol
+dependency2.from=FallingSnowBackground
+dependency2.to=Pair
 dependency2.type=UsesDependency
 objectbench.height=77
 objectbench.width=934
